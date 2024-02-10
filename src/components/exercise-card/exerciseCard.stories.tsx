@@ -13,6 +13,16 @@ const meta: Meta<typeof ExerciseCard> = {
     tags: ['tag1', 'tag2'],
     difficulty: 3,
   },
+  argTypes: {
+    difficulty: {
+      control: {
+        type: 'range',
+        min: 1,
+        max: 5,
+        step: 1,
+      },
+    },
+  },
 };
 
 export default meta;
@@ -26,7 +36,7 @@ export const Default: Story = {
     image: 'https://images.unsplash.com/photo-1541600383005-565c949cf777?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     link: 'https://www.crossfit.com/essentials/the-back-squat',
     linkText: 'Learn More',
-    tags: ['tag1', 'tag2'],
+    tags: ['Strength', 'Mobility'],
     difficulty: 3,
   },
 };
