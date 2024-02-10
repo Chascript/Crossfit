@@ -2,6 +2,8 @@ import {
   Card, CardHeader, CardBody, CardFooter, Link, Image, Divider,
 } from '@nextui-org/react';
 import NextImage from 'next/image';
+import { DifficultyValue } from '@/src/types';
+import DifficultyRating from '../difficulty-rating';
 
 export interface Props {
   title: string;
@@ -10,7 +12,7 @@ export interface Props {
   link: string;
   linkText: string;
   tags: string[];
-  difficulty: number;
+  difficulty: DifficultyValue;
 }
 
 export const ExerciseCard = ({
@@ -25,9 +27,9 @@ export const ExerciseCard = ({
   <Card className="max-w-[400px] bg-gray-100 shadow-lg rounded-lg">
     <CardHeader className="relative flex justify-between items-center">
       <p className="text-lg font-semibold text-gray-800">{title}</p>
-      <div className="p-2 bg-gray-200 rounded-full">
-        <p className="text-sm text-gray-700 font-medium">{difficulty}</p>
-      </div>
+      <DifficultyRating
+        value={difficulty}
+      />
     </CardHeader>
     <Divider />
     <CardBody>

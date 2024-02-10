@@ -1,4 +1,1 @@
-export type Pet = {
-  name: string;
-  owner: string;
-}
+export type DifficultyValue = 1 | 2 | 3 | 4 | 5;
