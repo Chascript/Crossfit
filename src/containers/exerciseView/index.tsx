@@ -1,5 +1,5 @@
 import React, {
-  useState, useEffect, ChangeEvent, useCallback,
+  useState, useEffect, useCallback,
 } from 'react';
 
 import { Exercise } from '@/src/types';
@@ -10,12 +10,14 @@ import crossfitExercises from './exerciseExamples';
 
 const ExerciseView = () => {
   const [exercises, setExercises] = useState<Exercise[]>([]);
+  const [filteredExercises, setFilteredExercises] = useState<Exercise[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   useEffect(() => {
     const fetchExercises = async () => {
       try {
         setExercises(crossfitExercises);
+        setFilteredExercises(crossfitExercises);
       } catch (error) {
         console.error('Error fetching exercises:', error);
       }
@@ -23,14 +25,21 @@ const ExerciseView = () => {
     fetchExercises();
   }, []);
 
-  const filteredExercises = exercises.filter((exercise) => exercise.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase())));
+  const handleSearchInputChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+    const query = event.target.value.toLowerCase();
+    const searchWords = query.split(/\s+/).filter(Boolean);
 
-  const handleSearchInputChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(event.target.value);
-  }, []);
+    setSearchQuery(query);
+
+    if (query === '') {
+      setFilteredExercises(exercises);
+    } else {
+      setFilteredExercises(exercises.filter((exercise) => searchWords.every((word) => exercise.tags.some((tag) => tag.toLowerCase().includes(word)))));
+    }
+  }, [exercises]);
 
   return (
-    <div className="flex flex-col items-start gap-4">
+    <div className="container flex flex-col items-start gap-4 p-4 mx-20">
       <SearchBar className="w-350" value={searchQuery} onChange={handleSearchInputChange} />
       <div className="flex flex-wrap justify-start gap-4">
         {filteredExercises.map((exercise) => (
