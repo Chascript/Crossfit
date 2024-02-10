@@ -1,5 +1,5 @@
 import {
-  Card, CardHeader, CardBody, CardFooter, Link, Image, Divider,
+  Card, CardHeader, CardBody, Image, Divider, Link, CardFooter,
 } from '@nextui-org/react';
 import NextImage from 'next/image';
 import { DifficultyValue } from '@/src/types';
@@ -34,27 +34,29 @@ export const ExerciseCard = ({
     <Divider />
     <CardBody>
       <Image
+        isZoomed
         as={NextImage}
         src={image}
         alt={title}
         width={400}
         height={300}
-        className="w-full"
+        className="max-h-48"
       />
       <p className="mt-4 text-base text-gray-700">{description}</p>
     </CardBody>
     <Divider />
     <CardFooter className="flex justify-between items-center">
-      <div>
+      <div className="flex flex-wrap" style={{ maxHeight: '30px', overflow: 'hidden' }}>
         {tags.map((tag) => (
-          <span key={tag} className="mr-2 mb-2 px-2 py-1 bg-gray-200 text-gray-700 rounded">{tag}</span>
+          <span key={tag} className="text-xs mr-2 mb-2 px-2 py-1 bg-gray-200 text-gray-700 rounded rounded-full">{tag}</span>
         ))}
       </div>
+      <div className="flex-grow" />
       <Link
         isExternal
         showAnchorIcon
         href={link}
-        className="text-blue-500 underline"
+        className=" text-sm text-blue-500 underline flex-shrink-0"
       >
         {linkText}
       </Link>
