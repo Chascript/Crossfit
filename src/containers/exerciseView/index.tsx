@@ -1,9 +1,13 @@
 import React, {
-  useState, useEffect, useCallback,
+  useState,
+  useEffect,
+  useCallback,
+  ChangeEvent,
 } from 'react';
 
 import { Exercise } from '@/src/types';
-import SearchBar from '../../components/search-bar';
+import { Input, Select, SelectItem } from '@nextui-org/react';
+import SearchIcon from '@/src/components/icons/search-icon';
 import ExerciseCard from '../../components/exercise-card';
 
 import crossfitExercises from './exerciseExamples';
@@ -11,36 +15,100 @@ import crossfitExercises from './exerciseExamples';
 const ExerciseView = () => {
   const [exercises, setExercises] = useState<Exercise[]>([]);
   const [filteredExercises, setFilteredExercises] = useState<Exercise[]>([]);
+  const [filteredByQueryExercises, setFilteredByQueryExercises] = useState<Exercise[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [selectedDifficulty, setSelectedDifficulty] = useState<number | null>(null);
+  const [uniqueDifficulties, setUniqueDifficulties] = useState<number[]>([]);
+
+  const updateUniqueDifficulties = (allExercises: Exercise[]) => {
+    const uniqueDifficulty: number[] = [];
+    allExercises.forEach((exercise: Exercise) => {
+      if (!uniqueDifficulty.includes(exercise.difficulty)) {
+        uniqueDifficulty.push(exercise.difficulty);
+      }
+    });
+    uniqueDifficulty.sort((a: number, b: number) => a - b);
+    setUniqueDifficulties(uniqueDifficulty);
+  };
 
   useEffect(() => {
-    const fetchExercises = async () => {
-      try {
-        setExercises(crossfitExercises);
-        setFilteredExercises(crossfitExercises);
-      } catch (error) {
-        console.error('Error fetching exercises:', error);
-      }
-    };
-    fetchExercises();
+    updateUniqueDifficulties(filteredByQueryExercises);
+  }, [filteredByQueryExercises, searchQuery]);
+
+  useEffect(() => {
+    const fetchedExercises = crossfitExercises;
+    setExercises(fetchedExercises);
+    setFilteredExercises(fetchedExercises);
+    updateUniqueDifficulties(fetchedExercises);
   }, []);
 
-  const handleSearchInputChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    const query = event.target.value.toLowerCase();
-    const searchWords = query.split(/\s+/).filter(Boolean);
+  useEffect(() => {
+    const filterExercises = () => {
+      let filtered = exercises;
 
-    setSearchQuery(query);
+      const searchWords = searchQuery.toLowerCase().split(/\s+/).filter(Boolean);
+      filtered = filtered.filter((exercise) => searchWords.every((word) => exercise.tags.some((tag) => tag.toLowerCase().includes(word))));
 
-    if (query === '') {
-      setFilteredExercises(exercises);
-    } else {
-      setFilteredExercises(exercises.filter((exercise) => searchWords.every((word) => exercise.tags.some((tag) => tag.toLowerCase().includes(word)))));
-    }
-  }, [exercises]);
+      setFilteredByQueryExercises(filtered);
+    };
+
+    filterExercises();
+  }, [exercises, searchQuery]);
+
+  useEffect(() => {
+    const filterExercises = () => {
+      let filtered = filteredByQueryExercises;
+
+      if (selectedDifficulty !== null) {
+        filtered = filtered.filter((exercise) => exercise.difficulty === selectedDifficulty);
+      }
+
+      setFilteredExercises(filtered);
+    };
+
+    filterExercises();
+  }, [filteredByQueryExercises, selectedDifficulty]);
+
+  const handleSearchInputChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      setSearchQuery(event.target.value);
+    },
+    [],
+  );
+
+  const handleDifficultyChange = (
+    event: ChangeEvent<HTMLSelectElement>,
+  ) => {
+    const difficulty = event.target.value;
+    const parsedDifficulty = difficulty === '' ? null : parseInt(difficulty, 10);
+    setSelectedDifficulty(parsedDifficulty);
+  };
 
   return (
-    <div className="container flex flex-col items-start gap-4 p-4 mx-20">
-      <SearchBar className="w-350" value={searchQuery} onChange={handleSearchInputChange} />
+    <div className="container flex flex-col gap-4 p-4 mx-20">
+      <Input
+        type="search"
+        label="Search"
+        labelPlacement="inside"
+        placeholder="crossfit, cardio"
+        radius="full"
+        onChange={handleSearchInputChange}
+        value={searchQuery}
+        className="max-w-xs"
+        startContent={
+          <SearchIcon className="text-black/50 mb-0.5 dark:text-white/90 text-slate-400 pointer-events-none flex-shrink-0" />
+        }
+      />
+      <Select
+        label="Difficulty"
+        radius="full"
+        placeholder="Select a Difficulty"
+        items={uniqueDifficulties.map((difficulty) => ({ value: difficulty, label: difficulty.toString() }))}
+        onChange={handleDifficultyChange}
+        className="max-w-xs"
+      >
+        {(difficulty) => <SelectItem key={difficulty.value} value={difficulty.value}>{difficulty.label}</SelectItem>}
+      </Select>
       <div className="flex flex-wrap justify-start gap-4">
         {filteredExercises.map((exercise) => (
           <ExerciseCard
