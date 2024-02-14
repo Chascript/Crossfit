@@ -82,8 +82,15 @@ const ExerciseView = () => {
     event: ChangeEvent<HTMLSelectElement>,
   ) => {
     const difficulty = event.target.value.split(',');
-    const parsedDifficulties = difficulty.map((value) => parseInt(value, 10));
-    setSelectedDifficulty(parsedDifficulties);
+    const parsedDifficulties = difficulty.map((value) => {
+      const parsedValue = parseInt(value, 10);
+      return Number.isNaN(parsedValue) || value === '' ? [] : parsedValue;
+    });
+    const flatDifficulties = parsedDifficulties.flat();
+
+    setSelectedDifficulty(flatDifficulties);
+    console.log(difficulty);
+    console.log(parsedDifficulties);
   };
 
   const handleTagClick = (tag: string) => {
