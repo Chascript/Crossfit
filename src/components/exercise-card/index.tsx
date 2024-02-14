@@ -15,6 +15,7 @@ export interface Props {
   linkText: string;
   tags: string[];
   difficulty: DifficultyValue;
+  searchQuery: string;
   onClickTag: (tag: string) => void;
 }
 
@@ -26,6 +27,7 @@ export const ExerciseCard = ({
   linkText,
   tags,
   difficulty,
+  searchQuery,
   onClickTag,
 }: Props) => (
   <Card className="max-w-[400px] bg-gray-100 shadow-lg rounded-lg">
@@ -52,14 +54,25 @@ export const ExerciseCard = ({
     <CardFooter className="flex justify-between items-center">
       <div className="flex flex-wrap max-h-3 gap-1">
         {tags.map((tag) => (
-          <Chip
-            onClick={() => onClickTag(tag)}
-            key={tag}
-            size="sm"
-            className="cursor-pointer hover:bg-blue-200 hover:text-blue-800"
-          >
-            {tag}
-          </Chip>
+          searchQuery.includes(tag) ? (
+            <Chip
+              onClose={() => onClickTag(tag)}
+              key={tag}
+              size="sm"
+              className="cursor-pointer"
+            >
+              {tag}
+            </Chip>
+          ) : (
+            <Chip
+              onClick={() => onClickTag(tag)}
+              key={tag}
+              size="sm"
+              className="cursor-pointer"
+            >
+              {tag}
+            </Chip>
+          )
         ))}
       </div>
       <div className="flex-grow" />

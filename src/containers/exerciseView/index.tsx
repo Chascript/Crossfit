@@ -59,7 +59,7 @@ const ExerciseView = () => {
     const filterExercises = () => {
       let filtered = filteredByQueryExercises;
 
-      if (selectedDifficulty.length > 0) { // Check if any values are selected
+      if (selectedDifficulty.length > 0) {
         filtered = filtered.filter((exercise) => selectedDifficulty.some((difficulty) => exercise.difficulty === difficulty));
       }
 
@@ -85,7 +85,13 @@ const ExerciseView = () => {
   };
 
   const handleTagClick = (tag: string) => {
-    setSearchQuery((prevQuery) => (prevQuery ? `${prevQuery} ${tag}` : tag));
+    setSearchQuery((prevQuery) => {
+      if (prevQuery?.toLowerCase().includes(tag.toLowerCase())) {
+        const newQuery = prevQuery.replace(new RegExp(`\\b${tag}\\b`, 'gi'), '');
+        return newQuery.trim();
+      }
+      return prevQuery ? `${prevQuery} ${tag}` : tag;
+    });
   };
 
   return (
@@ -126,6 +132,7 @@ const ExerciseView = () => {
             tags={exercise.tags}
             difficulty={exercise.difficulty}
             onClickTag={handleTagClick}
+            searchQuery={searchQuery}
           />
         ))}
       </div>
