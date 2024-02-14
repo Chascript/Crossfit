@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-  Card, CardHeader, CardBody, Image, Divider, Link, CardFooter,
+  Card, CardHeader, CardBody, Image, Divider, Link, CardFooter, Chip,
 } from '@nextui-org/react';
 import NextImage from 'next/image';
 import { DifficultyValue } from '@/src/types';
@@ -48,9 +48,9 @@ export const ExerciseCard = ({
     </CardBody>
     <Divider />
     <CardFooter className="flex justify-between items-center">
-      <div className="flex flex-wrap" style={{ maxHeight: '30px', overflow: 'hidden' }}>
+      <div className="flex flex-wrap max-h-7 gap-1">
         {tags.map((tag) => (
-          <span key={tag} className="text-xs mr-2 mb-2 px-2 py-1 bg-gray-200 text-gray-700 rounded rounded-full">{tag}</span>
+          <Chip key={tag} size="sm">{tag}</Chip>
         ))}
       </div>
       <div className="flex-grow" />
