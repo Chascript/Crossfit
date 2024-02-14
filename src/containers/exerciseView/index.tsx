@@ -17,7 +17,7 @@ const ExerciseView = () => {
   const [filteredExercises, setFilteredExercises] = useState<Exercise[]>([]);
   const [filteredByQueryExercises, setFilteredByQueryExercises] = useState<Exercise[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [selectedDifficulty, setSelectedDifficulty] = useState<number | null>(null);
+  const [selectedDifficulty, setSelectedDifficulty] = useState<number[]>([]);
   const [uniqueDifficulties, setUniqueDifficulties] = useState<number[]>([]);
 
   const updateUniqueDifficulties = (allExercises: Exercise[]) => {
@@ -59,8 +59,8 @@ const ExerciseView = () => {
     const filterExercises = () => {
       let filtered = filteredByQueryExercises;
 
-      if (selectedDifficulty !== null) {
-        filtered = filtered.filter((exercise) => exercise.difficulty === selectedDifficulty);
+      if (selectedDifficulty.length > 0) {
+        filtered = filtered.filter((exercise) => selectedDifficulty.some((difficulty) => exercise.difficulty === difficulty));
       }
 
       setFilteredExercises(filtered);
@@ -79,9 +79,19 @@ const ExerciseView = () => {
   const handleDifficultyChange = (
     event: ChangeEvent<HTMLSelectElement>,
   ) => {
-    const difficulty = event.target.value;
-    const parsedDifficulty = difficulty === '' ? null : parseInt(difficulty, 10);
-    setSelectedDifficulty(parsedDifficulty);
+    const difficulty = event.target.value.split(',');
+    const parsedDifficulties = difficulty.map((value) => parseInt(value, 10));
+    setSelectedDifficulty(parsedDifficulties);
+  };
+
+  const handleTagClick = (tag: string) => {
+    setSearchQuery((prevQuery) => {
+      if (prevQuery?.toLowerCase().includes(tag.toLowerCase())) {
+        const newQuery = prevQuery.replace(new RegExp(`\\b${tag}\\b`, 'gi'), '');
+        return newQuery.trim();
+      }
+      return prevQuery ? `${prevQuery} ${tag}` : tag;
+    });
   };
 
   return (
@@ -103,6 +113,7 @@ const ExerciseView = () => {
         label="Difficulty"
         radius="full"
         placeholder="Select a Difficulty"
+        selectionMode="multiple"
         items={uniqueDifficulties.map((difficulty) => ({ value: difficulty, label: difficulty.toString() }))}
         onChange={handleDifficultyChange}
         className="max-w-xs"
@@ -120,6 +131,8 @@ const ExerciseView = () => {
             linkText={exercise.linkText}
             tags={exercise.tags}
             difficulty={exercise.difficulty}
+            onClickTag={handleTagClick}
+            searchQuery={searchQuery}
           />
         ))}
       </div>
