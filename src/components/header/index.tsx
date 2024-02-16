@@ -19,9 +19,7 @@ export const Header = () => {
     >
       <NavbarContent>
         <NavbarBrand>
-          <Link color="foreground" href="/">
-            <CrossfitInfoLogo />
-          </Link>
+          <CrossfitInfoLogo type="color" url="/" />
         </NavbarBrand>
       </NavbarContent>
 
