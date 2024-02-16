@@ -1,9 +1,11 @@
 import React from 'react';
 
 import ExerciseView from '../containers/exerciseView';
+import { fetchCrossfitExercises } from '../server/crossfitExercises';
 
-export default function Page() {
+export default async function Page() {
+  const crossfitExercisesList = await fetchCrossfitExercises();
   return (
-    <ExerciseView />
+    <ExerciseView crossfitExercises={crossfitExercisesList} />
   );
 }
