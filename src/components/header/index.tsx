@@ -12,14 +12,14 @@ export const Header = () => {
   return (
     <Navbar
       classNames={{
-        base: 'dark',
+        base: 'dark bg-black',
         wrapper: 'max-w-full',
       }}
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent>
         <NavbarBrand>
-          <CrossfitInfoLogo type="color" url="/" />
+          <CrossfitInfoLogo type="light" url="/" />
         </NavbarBrand>
       </NavbarContent>
 

@@ -11,7 +11,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {},
+      backgroundImage: {
+        'home-hero': 'url(/public/banners/Working-Out-With-Chalk.jpg)',
+      },
     },
   },
   darkMode: 'class',
