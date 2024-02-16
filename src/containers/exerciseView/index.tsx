@@ -12,9 +12,13 @@ import { Input, Select, SelectItem } from '@nextui-org/react';
 import SearchIcon from '@/src/components/icons/search-icon';
 import ExerciseCard from '../../components/exercise-card';
 
-import crossfitExercises from './exerciseExamples';
+export interface Props {
+  crossfitExercises: Exercise[];
+}
 
-const ExerciseView = () => {
+const ExerciseView = ({
+  crossfitExercises,
+}: Props) => {
   const [exercises, setExercises] = useState<Exercise[]>([]);
   const [filteredExercises, setFilteredExercises] = useState<Exercise[]>([]);
   const [filteredByQueryExercises, setFilteredByQueryExercises] = useState<Exercise[]>([]);
@@ -38,11 +42,9 @@ const ExerciseView = () => {
   }, [filteredByQueryExercises, searchQuery]);
 
   useEffect(() => {
-    const fetchedExercises = crossfitExercises;
-    setExercises(fetchedExercises);
-    setFilteredExercises(fetchedExercises);
-    updateUniqueDifficulties(fetchedExercises);
-  }, []);
+    setExercises(crossfitExercises);
+    updateUniqueDifficulties(crossfitExercises);
+  }, [crossfitExercises]);
 
   useEffect(() => {
     const filterExercises = () => {
@@ -130,20 +132,38 @@ const ExerciseView = () => {
         {(difficulty) => <SelectItem key={difficulty.value} value={difficulty.value}>{difficulty.label}</SelectItem>}
       </Select>
       <div className="flex flex-wrap justify-start gap-4">
-        {filteredExercises.map((exercise) => (
-          <ExerciseCard
-            key={exercise.id}
-            title={exercise.title}
-            description={exercise.description}
-            image={exercise.image}
-            link={exercise.link}
-            linkText={exercise.linkText}
-            tags={exercise.tags}
-            difficulty={exercise.difficulty}
-            onClickTag={handleTagClick}
-            searchQuery={searchQuery}
-          />
-        ))}
+        {filteredExercises.length === 0
+          ? (
+            crossfitExercises.map((exercise) => (
+              <ExerciseCard
+                key={exercise.id}
+                title={exercise.title}
+                description={exercise.description}
+                image={exercise.image}
+                link={exercise.link}
+                linkText={exercise.linkText}
+                tags={exercise.tags}
+                difficulty={exercise.difficulty}
+                onClickTag={handleTagClick}
+                searchQuery={searchQuery}
+              />
+            ))
+          ) : (
+            filteredExercises.map((exercise) => (
+              <ExerciseCard
+                key={exercise.id}
+                title={exercise.title}
+                description={exercise.description}
+                image={exercise.image}
+                link={exercise.link}
+                linkText={exercise.linkText}
+                tags={exercise.tags}
+                difficulty={exercise.difficulty}
+                onClickTag={handleTagClick}
+                searchQuery={searchQuery}
+              />
+            ))
+          )}
       </div>
     </div>
   );
