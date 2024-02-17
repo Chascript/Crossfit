@@ -1,9 +1,12 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+
 import Image from 'next/image';
-import { Bullets } from '@/src/types';
+
 import { useInView } from 'react-intersection-observer';
+
+import { Bullets } from '@/src/types';
 import Bullet from '../bullet';
 
 export interface Props {
