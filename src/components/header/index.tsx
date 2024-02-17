@@ -12,14 +12,14 @@ export const Header = () => {
   return (
     <Navbar
       classNames={{
-        base: 'dark',
+        base: 'dark bg-black',
         wrapper: 'max-w-full',
       }}
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent>
         <NavbarBrand>
-          <CrossfitInfoLogo type="color" url="/" />
+          <CrossfitInfoLogo type="light" url="/" />
         </NavbarBrand>
       </NavbarContent>
 
@@ -32,7 +32,7 @@ export const Header = () => {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="/">
+          <Link color="foreground" href="/exercises">
             Exercises
           </Link>
         </NavbarItem>

@@ -1,13 +1,13 @@
 import React from 'react';
 
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Fredoka } from 'next/font/google';
 import './globals.css';
 import Providers from './providers';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Fredoka({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',

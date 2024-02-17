@@ -2143,6 +2143,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@next/font@npm:^14.1.0":
+  version: 14.1.0
+  resolution: "@next/font@npm:14.1.0"
+  peerDependencies:
+    next: "*"
+  checksum: 10c0/7e924d0e822bd6c48e636a9f8b07458077dcff506c6ddaffea1eb6f88bf1b6a06dec0e62bb03b32ec08252637568be66b7a8c738d0e25893821b6f517f9f8001
+  languageName: node
+  linkType: hard
+
 "@next/swc-darwin-arm64@npm:14.1.0":
   version: 14.1.0
   resolution: "@next/swc-darwin-arm64@npm:14.1.0"
@@ -7177,6 +7186,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "Crossfit@workspace:."
   dependencies:
+    "@next/font": "npm:^14.1.0"
     "@nextui-org/react": "npm:^2.2.9"
     "@nextui-org/system": "npm:^2.0.15"
     "@nextui-org/theme": "npm:^2.1.17"

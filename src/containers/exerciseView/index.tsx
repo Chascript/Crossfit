@@ -9,7 +9,7 @@ import React, {
 
 import { Exercise } from '@/src/types';
 import { Input, Select, SelectItem } from '@nextui-org/react';
-import SearchIcon from '@/src/components/icons/search-icon';
+import SearchIcon from '../../components/icons/search-icon';
 import ExerciseCard from '../../components/exercise-card';
 
 export interface Props {
