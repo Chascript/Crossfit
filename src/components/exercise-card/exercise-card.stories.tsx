@@ -11,6 +11,7 @@ const meta: Meta<typeof ExerciseCard> = {
     link: 'https://example.com/exercise',
     linkText: 'Learn More',
     tags: ['tag1', 'tag2'],
+    searchQuery: '',
     difficulty: 3,
   },
   argTypes: {

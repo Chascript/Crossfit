@@ -1,6 +1,6 @@
 import { Exercise } from '@/src/types';
 
-const crossfitExercises: Exercise[] = [
+export const crossfitExercises: Exercise[] = [
   {
     id: 1,
     title: 'Thrusters',
