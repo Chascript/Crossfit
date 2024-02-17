@@ -22,14 +22,14 @@ const MultiplePoints = ({
   image,
   bullets,
 }: Props) => {
-  const [isHeadingVisible, setIsHeadingVisible] = useState(false);
-  const [isBullet1Visible, setIsBullet1Visible] = useState(false);
-  const [isBullet2Visible, setIsBullet2Visible] = useState(false);
-  const [isBullet3Visible, setIsBullet3Visible] = useState(false);
-  const [isBullet4Visible, setIsBullet4Visible] = useState(false);
-  const [isBullet5Visible, setIsBullet5Visible] = useState(false);
-  const [isBullet6Visible, setIsBullet6Visible] = useState(false);
-  const [isBullet7Visible, setIsBullet7Visible] = useState(false);
+  const [isHeadingVisible, setIsHeadingVisible] = useState<boolean>(false);
+  const [isBullet1Visible, setIsBullet1Visible] = useState<boolean>(false);
+  const [isBullet2Visible, setIsBullet2Visible] = useState<boolean>(false);
+  const [isBullet3Visible, setIsBullet3Visible] = useState<boolean>(false);
+  const [isBullet4Visible, setIsBullet4Visible] = useState<boolean>(false);
+  const [isBullet5Visible, setIsBullet5Visible] = useState<boolean>(false);
+  const [isBullet6Visible, setIsBullet6Visible] = useState<boolean>(false);
+  const [isBullet7Visible, setIsBullet7Visible] = useState<boolean>(false);
 
   const [refHeading, headingInView] = useInView({ threshold: 0.8, triggerOnce: true });
   const [refBullet1, bullet1InView] = useInView({ threshold: 0.8, triggerOnce: true });
@@ -89,13 +89,13 @@ const MultiplePoints = ({
   }, [bullet7InView]);
 
   // Define constants for each position
-  const bullet1 = bullets.find((bullet) => bullet.position === 1);
-  const bullet2 = bullets.find((bullet) => bullet.position === 2);
-  const bullet3 = bullets.find((bullet) => bullet.position === 3);
-  const bullet4 = bullets.find((bullet) => bullet.position === 4);
-  const bullet5 = bullets.find((bullet) => bullet.position === 5);
-  const bullet6 = bullets.find((bullet) => bullet.position === 6);
-  const bullet7 = bullets.find((bullet) => bullet.position === 7);
+  const bullet1 = bullets.find((bullet: Bullets) => bullet.position === 1);
+  const bullet2 = bullets.find((bullet: Bullets) => bullet.position === 2);
+  const bullet3 = bullets.find((bullet: Bullets) => bullet.position === 3);
+  const bullet4 = bullets.find((bullet: Bullets) => bullet.position === 4);
+  const bullet5 = bullets.find((bullet: Bullets) => bullet.position === 5);
+  const bullet6 = bullets.find((bullet: Bullets) => bullet.position === 6);
+  const bullet7 = bullets.find((bullet: Bullets) => bullet.position === 7);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 my-12 mx-10">
