@@ -20,14 +20,22 @@ const MultiplePoints = ({
   bullets,
 }: Props) => {
   const [isHeadingVisible, setIsHeadingVisible] = useState(false);
-  const [isBulletGroup1Visible, setIsBulletGroup1Visible] = useState(false);
-  const [isBulletGroup3Visible, setIsBulletGroup3Visible] = useState(false);
-  const [isBulletGroup5Visible, setIsBulletGroup5Visible] = useState(false);
+  const [isBullet1Visible, setIsBullet1Visible] = useState(false);
+  const [isBullet2Visible, setIsBullet2Visible] = useState(false);
+  const [isBullet3Visible, setIsBullet3Visible] = useState(false);
+  const [isBullet4Visible, setIsBullet4Visible] = useState(false);
+  const [isBullet5Visible, setIsBullet5Visible] = useState(false);
+  const [isBullet6Visible, setIsBullet6Visible] = useState(false);
+  const [isBullet7Visible, setIsBullet7Visible] = useState(false);
 
   const [refHeading, headingInView] = useInView({ threshold: 0.8, triggerOnce: true });
   const [refBullet1, bullet1InView] = useInView({ threshold: 0.8, triggerOnce: true });
+  const [refBullet2, bullet2InView] = useInView({ threshold: 0.8, triggerOnce: true });
   const [refBullet3, bullet3InView] = useInView({ threshold: 0.8, triggerOnce: true });
+  const [refBullet4, bullet4InView] = useInView({ threshold: 0.8, triggerOnce: true });
   const [refBullet5, bullet5InView] = useInView({ threshold: 0.8, triggerOnce: true });
+  const [refBullet6, bullet6InView] = useInView({ threshold: 0.8, triggerOnce: true });
+  const [refBullet7, bullet7InView] = useInView({ threshold: 0.8, triggerOnce: true });
 
   useEffect(() => {
     if (headingInView) {
@@ -37,21 +45,45 @@ const MultiplePoints = ({
 
   useEffect(() => {
     if (bullet1InView) {
-      setIsBulletGroup1Visible(true);
+      setIsBullet1Visible(true);
     }
   }, [bullet1InView]);
 
   useEffect(() => {
+    if (bullet2InView) {
+      setIsBullet2Visible(true);
+    }
+  }, [bullet2InView]);
+
+  useEffect(() => {
     if (bullet3InView) {
-      setIsBulletGroup3Visible(true);
+      setIsBullet3Visible(true);
     }
   }, [bullet3InView]);
 
   useEffect(() => {
+    if (bullet4InView) {
+      setIsBullet4Visible(true);
+    }
+  }, [bullet4InView]);
+
+  useEffect(() => {
     if (bullet5InView) {
-      setIsBulletGroup5Visible(true);
+      setIsBullet5Visible(true);
     }
   }, [bullet5InView]);
+
+  useEffect(() => {
+    if (bullet6InView) {
+      setIsBullet6Visible(true);
+    }
+  }, [bullet6InView]);
+
+  useEffect(() => {
+    if (bullet7InView) {
+      setIsBullet7Visible(true);
+    }
+  }, [bullet7InView]);
 
   // Define constants for each position
   const bullet1 = bullets.find((bullet) => bullet.position === 1);
@@ -63,14 +95,14 @@ const MultiplePoints = ({
   const bullet7 = bullets.find((bullet) => bullet.position === 7);
 
   return (
-    <div className="grid grid-cols-4 gap-4 my-12 mx-10">
-      <div className="p-4" />
-      <div ref={refHeading} className={`col-span-2 p-4 text-center ${isHeadingVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} duration-700 transition-transform`}>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 my-12 mx-10">
+      <div className="hidden lg:block lg:p-4" />
+      <div ref={refHeading} className={`md:col-span-2 lg:p-4 text-center ${isHeadingVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} duration-700 transition-transform`}>
         <h2 className="text-3xl font-bold">{heading}</h2>
         <p className="text-[17px] italic mt-3">{description}</p>
       </div>
-      <div className="p-4" />
-      <div ref={refBullet1} className={`p-4 ${isBulletGroup1Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} duration-700 transition-transform`}>
+      <div className="hidden lg:block lg:p-4" />
+      <div ref={refBullet1} className={`md:col-span-1 ${bullet1 ? 'block' : 'hidden lg:block'} lg:p-4 ${isBullet1Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} duration-700 transition-transform`}>
         {bullet1 && (
           <Bullet
             heading={bullet1.heading}
@@ -78,16 +110,16 @@ const MultiplePoints = ({
           />
         )}
       </div>
-      <div className={`relative col-span-2 row-span-2 p-4 ${isBulletGroup1Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} duration-700 transition-transform`}>
+      <div className={`md:col-span-1 h-48 md:h-auto relative lg:col-span-2 md:row-span-2 lg:p-4 ${isBullet1Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} duration-700 transition-transform`}>
         <Image
           src={image}
           alt="CrossFit ropes"
-          className="w-40 rounded-full overflow-hidden bg-gray-200 border-4 border-gray-200 border-solid shadow-2xl"
+          className="lg:h-auto w-40 rounded-full overflow-hidden bg-gray-200 border-4 border-gray-200 border-solid shadow-2xl"
           layout="fill"
           objectFit="cover"
         />
       </div>
-      <div className={`p-4 ${isBulletGroup1Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} duration-700 transition-transform`}>
+      <div ref={refBullet2} className={`md:col-span-1 ${bullet2 ? 'block' : 'hidden lg:block'} lg:p-4 ${isBullet2Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} duration-700 transition-transform`}>
         {bullet2 && (
           <Bullet
             heading={bullet2.heading}
@@ -95,7 +127,7 @@ const MultiplePoints = ({
           />
         )}
       </div>
-      <div ref={refBullet3} className={`p-4 ${isBulletGroup3Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} duration-700 transition-transform`}>
+      <div ref={refBullet3} className={`md:col-span-1 ${bullet3 ? 'block' : 'hidden lg:block'} lg:p-4 ${isBullet3Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} duration-700 transition-transform`}>
         {bullet3 && (
           <Bullet
             heading={bullet3.heading}
@@ -103,7 +135,7 @@ const MultiplePoints = ({
           />
         )}
       </div>
-      <div className={`p-4 ${isBulletGroup3Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} duration-700 transition-transform`}>
+      <div ref={refBullet4} className={`md:col-span-1 ${bullet4 ? 'block' : 'hidden lg:block'} lg:p-4 ${isBullet4Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} duration-700 transition-transform`}>
         {bullet4 && (
           <Bullet
             heading={bullet4.heading}
@@ -111,7 +143,7 @@ const MultiplePoints = ({
           />
         )}
       </div>
-      <div ref={refBullet5} className={`p-4 ${isBulletGroup5Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} duration-700 transition-transform`}>
+      <div ref={refBullet5} className={`md:col-span-1 ${bullet5 ? 'block' : 'hidden lg:block'} lg:p-4 ${isBullet5Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} duration-700 transition-transform`}>
         {bullet5 && (
           <Bullet
             heading={bullet5.heading}
@@ -119,8 +151,8 @@ const MultiplePoints = ({
           />
         )}
       </div>
-      <div className={`col-span-2 p-4 flex justify-center ${isBulletGroup5Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} duration-700 transition-transform`}>
-        <div className="w-1/2">
+      <div ref={refBullet6} className={`md:col-span-1 ${bullet6 ? 'block' : 'hidden lg:block'} lg:col-span-2 lg:p-4 lg:flex lg:justify-center ${isBullet6Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} duration-700 transition-transform`}>
+        <div className="lg:w-1/2">
           {bullet6 && (
             <Bullet
               heading={bullet6.heading}
@@ -129,7 +161,7 @@ const MultiplePoints = ({
           )}
         </div>
       </div>
-      <div className={`p-4 ${isBulletGroup5Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} duration-700 transition-transform`}>
+      <div ref={refBullet7} className={`md:col-span-1 ${bullet7 ? 'block' : 'hidden lg:block'} lg:p-4 ${isBullet7Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} duration-700 transition-transform`}>
         {bullet7 && (
           <Bullet
             heading={bullet7.heading}
