@@ -10,3 +10,9 @@ export type Exercise = {
   tags: string[];
   difficulty: DifficultyValue;
 }
+
+export type Bullets = {
+  position: 1 | 2 | 3 | 4 | 5 | 6 | 7;
+  heading: string;
+  description: string;
+}
