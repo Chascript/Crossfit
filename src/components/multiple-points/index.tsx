@@ -1,6 +1,8 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, {
+  useState, useEffect, useRef, ReactNode,
+} from 'react';
 import Image from 'next/image';
 import { Bullets } from '@/src/types';
 import Bullet from '../bullet';
@@ -65,7 +67,7 @@ export const MultiplePoints = ({
     };
   }, []);
 
-  const bulletElements: React.ReactNode[] = [];
+  const bulletElements: ReactNode[] = [];
   bulletElements.push(
     <div
       key="image"
