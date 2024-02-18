@@ -41,7 +41,8 @@
       "ignoreNonDOM": true
     }],
     "no-shadow": "off",
-    "@typescript-eslint/no-shadow": "error"
+    "@typescript-eslint/no-shadow": "error",
+    "no-param-reassign": ["error", { "props": false }]
   },
   "settings": { 
     "typescript": {
