@@ -16,3 +16,9 @@ export type Bullets = {
   heading: string;
   description: string;
 }
+
+export type AccorItem = {
+  id: number;
+  question: string;
+  answer: string;
+}
