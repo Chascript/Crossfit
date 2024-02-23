@@ -10,7 +10,7 @@ export const Bullet = ({
   description,
 }: Props) => (
   <div className="flex flex-col">
-    <h3 className="text-lg font-bold">{heading}</h3>
+    <h3 className="text-lg font-medium underline">{heading}</h3>
     <p className="text-base">{description}</p>
   </div>
 );

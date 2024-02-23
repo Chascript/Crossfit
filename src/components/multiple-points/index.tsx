@@ -85,7 +85,7 @@ export const MultiplePoints = ({
     </div>,
   );
 
-  for (let i = 0; i < 8; i += 1) {
+  for (let i = 0; i < 7; i += 1) {
     const bullet = bullets.find((b) => b.position === (i + 1));
     bulletElements.push(
       (bullet?.position === (i + 1)) ? (
@@ -119,7 +119,7 @@ export const MultiplePoints = ({
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 my-12 mx-10">
       <div className="order-1 hidden lg:block lg:p-4" />
       <div ref={headingRef} className={`heading-container order-2 md:col-span-2 lg:p-4 text-center ${headingInView ? 'transition-opacity opacity-100' : 'opacity-0'} duration-700 delay-300`}>
-        <h2 className="text-3xl font-bold">{heading}</h2>
+        <h2 className="text-3xl font-medium">{heading}</h2>
         <p className="text-[17px] italic mt-3">{description}</p>
       </div>
       <div className="order-3 hidden lg:block lg:p-4" />
