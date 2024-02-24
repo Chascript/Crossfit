@@ -63,7 +63,7 @@ export const Hero = ({
   }, []);
 
   return (
-    <div className="grid px-4 gap-2 grid-cols-1 h-[600px] lg:pl-10 lg:pr-10 lg:grid-cols-6 lg:gap-8 lg:items-center lg:justify-center my-4 overflow-hidden">
+    <div className="grid px-4 gap-2 grid-cols-1 h-[600px] lg:pl-10 lg:pr-10 lg:grid-cols-6 lg:gap-8 lg:items-center lg:justify-center my-4">
       {/* Left side */}
       <div className="grid grid-rows-6 md:grid-cols-6 lg:grid-cols-3 lg:grid-rows-3 gap-2 h-[600px] lg:col-span-3 lg:gap-8">
         {/* First section */}
