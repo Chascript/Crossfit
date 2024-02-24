@@ -100,6 +100,7 @@ const HomePage = () => (
       linkText="Find Exercises"
       linkUrl="/exercises"
     />
+    <Divider className="w-5/6 m-auto" />
     <MultiplePoints
       heading="Core Principles"
       description="CrossFit's core principles ensure adaptable, comprehensive fitness for all levels, promoting lasting health and growth"
