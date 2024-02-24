@@ -9,6 +9,7 @@ import fistBump from '../../public/images/fist-bump.jpg';
 import MultiplePoints from '../components/multiple-points';
 import { AccorItem, Bullets } from '../types';
 import CrossfitAccordion from '../components/crossfit-accordion';
+import WorkoutOfTheDayView from '../containers/workoutOfTheDayView';
 
 const CorePrinciples: Bullets[] = [
   {
@@ -99,12 +100,15 @@ const HomePage = () => (
       linkText="Find Exercises"
       linkUrl="/exercises"
     />
+    <Divider className="w-5/6 m-auto" />
     <MultiplePoints
       heading="Core Principles"
       description="CrossFit's core principles ensure adaptable, comprehensive fitness for all levels, promoting lasting health and growth"
       image={fistBump.src}
       bullets={CorePrinciples}
     />
+    <Divider className="w-5/6 m-auto" />
+    <WorkoutOfTheDayView />
     <Divider className="w-5/6 m-auto" />
     <CrossfitAccordion
       title="Crossfit FAQs"

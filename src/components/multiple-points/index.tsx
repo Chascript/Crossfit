@@ -77,7 +77,7 @@ export const MultiplePoints = ({
         <Image
           src={image}
           alt="CrossFit ropes"
-          className="lg:h-auto w-40 rounded-full overflow-hidden bg-gray-200 border-4 border-gray-200 border-solid shadow-2xl"
+          className="lg:h-auto w-40 rounded-full bg-gray-200 border-4 border-gray-200 border-solid shadow-2xl"
           layout="fill"
           objectFit="cover"
         />
