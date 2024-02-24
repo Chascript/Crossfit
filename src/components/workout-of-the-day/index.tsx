@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   Button, ButtonGroup, Card, CardBody, CardFooter, CardHeader, Divider,
 } from '@nextui-org/react';
@@ -14,23 +15,21 @@ export const WorkoutOfTheDayCard = ({
 }:Props) => {
   const scaledWorkout = (
     <ul>
-      <li>Thrusters (lighter weights)</li>
-      <li>Knee Push-ups</li>
-      <li>60 Single-unders</li>
-      <li>Knee Raises</li>
-      <li>Step Ups</li>
+      <li>15 Thrusters (lighter weights)</li>
+      <li>40 Single-unders</li>
+      <li>10 Knee Raises</li>
     </ul>
   );
 
   const rxWorkout = (
     <ul>
-      <li>Thrusters (95/65 lbs)</li>
-      <li>Handstand Push-ups</li>
-      <li>30 Double-unders</li>
-      <li>Toes-to-bar</li>
-      <li>Box Jumps</li>
+      <li>15 Thrusters (95/65 lbs)</li>
+      <li>20 Double-unders</li>
+      <li>10 Toes-to-bar</li>
     </ul>
   );
+
+  const workoutFormat = 'AMRAP in 13 minutes';
 
   return (
     <Card className="max-w-[400px] w-full bg-gray-100 shadow-lg rounded-lg">
@@ -43,11 +42,9 @@ export const WorkoutOfTheDayCard = ({
       <Divider className="border-gray-700" />
       <CardBody className="flex flex-col text-gray-200 bg-gray-800 p-6">
         {' '}
-        {/* Adjusted text color to text-gray-200 */}
         {isScaled ? scaledWorkout : rxWorkout}
-        <p className="text-gray-300">Time: 10 minutes</p>
+        <p className="text-gray-300">{workoutFormat}</p>
         {' '}
-        {/* Adjusted text color to text-gray-300 for the time */}
       </CardBody>
       <Divider className="border-gray-700" />
       <CardFooter className="flex justify-center bg-gray-700 py-4 rounded-b-lg">
