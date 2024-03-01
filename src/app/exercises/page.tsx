@@ -1,11 +1,11 @@
 import React from 'react';
 
-import ExerciseView from '../../containers/exerciseView';
+import ExerciseListView from '../../containers/exerciseListView';
 import { fetchCrossfitExercises } from '../../server/crossfitExercises';
 
 export default async function Page() {
   const crossfitExercisesList = await fetchCrossfitExercises();
   return (
-    <ExerciseView crossfitExercises={crossfitExercisesList} />
+    <ExerciseListView crossfitExercises={crossfitExercisesList} />
   );
 }

@@ -12,7 +12,6 @@ export interface Props {
   description: string;
   image: string;
   link: string;
-  linkText: string;
   tags: string[];
   difficulty: DifficultyValue;
   searchQuery: string;
@@ -24,7 +23,6 @@ export const ExerciseCard = ({
   description,
   image,
   link,
-  linkText,
   tags,
   difficulty,
   searchQuery,
@@ -77,12 +75,10 @@ export const ExerciseCard = ({
       </div>
       <div className="flex-grow" />
       <Link
-        isExternal
-        showAnchorIcon
-        href={link}
+        href={`exercises/${link}`}
         className=" text-sm text-blue-500 underline flex-shrink-0"
       >
-        {linkText}
+        Learn More
       </Link>
     </CardFooter>
   </Card>

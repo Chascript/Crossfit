@@ -6,7 +6,6 @@ export type Exercise = {
   description: string;
   image: string;
   link: string;
-  linkText: string;
   tags: string[];
   difficulty: DifficultyValue;
 }

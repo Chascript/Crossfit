@@ -1,8 +1,14 @@
 import crossfitExercises from './exerciseExamples';
 
 export const fetchCrossfitExercises = async () => {
-  // fetch exercises from the server
   const fetchedCrossfitExercises = await crossfitExercises;
-  console.log('server');
   return fetchedCrossfitExercises;
 };
+
+export const fetchCrossfitExercise = async (exercise: string) => {
+  const fetchedCrossfitExercise = await crossfitExercises.find((ex) => ex.title.toLowerCase() === exercise);
+  if (fetchedCrossfitExercise) return fetchedCrossfitExercise;
+  return undefined;
+};
+
+export default { fetchCrossfitExercises, fetchCrossfitExercise };
