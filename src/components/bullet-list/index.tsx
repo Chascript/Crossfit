@@ -2,19 +2,23 @@ import React from 'react';
 
 interface Props {
   heading: string;
-  description: string;
+  list: string[];
   underlined?: boolean;
 }
 
-export const Bullet = ({
+export const BulletList = ({
   heading,
-  description,
+  list,
   underlined = true,
 }: Props) => (
   <div className="flex flex-col">
     <h3 className={`text-lg font-medium ${underlined && 'underline'}`}>{heading}</h3>
-    <p className="text-base">{description}</p>
+    <ul className="list-disc">
+      {list.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
   </div>
 );
 
-export default Bullet;
+export default BulletList;

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Movement } from '@/src/types';
 import { Card, CardBody, CardHeader } from '@nextui-org/react';
+import Bullet from '../../bullet';
+import BulletList from '../../bullet-list';
 
 interface Props {
   movement: Movement;
@@ -17,34 +19,21 @@ export const ExerciseMovement = ({
       <p>
         {movement.description}
       </p>
-      <div>
-        <h3 className="text-lg font-medium">
-          Purpose
-        </h3>
-        {' '}
-        <p>
-          {movement.purpose}
-        </p>
-      </div>
-      <div>
-        <h3 className="text-lg font-medium">
-          Benefits
-        </h3>
-        <ul className="list-disc">
-          {movement.benefits.map((benefit) => (
-            <li key={benefit}>{benefit}</li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h3 className="text-lg font-medium">
-          Common Usage
-        </h3>
-        {' '}
-        <p>
-          {movement.commonUsage}
-        </p>
-      </div>
+      <Bullet
+        heading="Purpose"
+        description={movement.purpose}
+        underlined={false}
+      />
+      <BulletList
+        heading="Benefits"
+        list={movement.benefits}
+        underlined={false}
+      />
+      <Bullet
+        heading="Common Usage"
+        description={movement.commonUsage}
+        underlined={false}
+      />
     </CardBody>
   </Card>
 );
