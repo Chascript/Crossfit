@@ -6,7 +6,9 @@ interface Props {
   movement: Movement;
 }
 
-export const ExerciseMovement: React.FC<Props> = ({ movement }) => (
+export const ExerciseMovement = ({
+  movement,
+}: Props) => (
   <Card className="flex flex-1 p-3 shadow-md border border-black-400">
     <CardHeader>
       <h2 className="text-2xl font-semibold pb-0">Movement</h2>

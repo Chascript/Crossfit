@@ -8,7 +8,9 @@ interface Props {
   muscleGroupsWorked: MuscleGroupsWorked;
 }
 
-export const ExerciseMuscleGroupsWorked: React.FC<Props> = ({ muscleGroupsWorked }) => (
+export const ExerciseMuscleGroupsWorked = ({
+  muscleGroupsWorked,
+}: Props) => (
   <Card className="flex flex-1 p-3 rounded-lg shadow-md border border-black-400">
     <CardHeader>
       <h2 className="text-2xl font-semibold">Muscle Groups Worked</h2>
