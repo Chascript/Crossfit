@@ -24,15 +24,17 @@ export const ExerciseView = async ({ crossfitExercise }: Props) => {
   }
 
   return (
-    <div className="container mx-auto mt-8">
+    <div className="container flex flex-col gap-4 mx-2 sm:mx-auto mt-8">
       <ExerciseTitle
         title={exercise.title}
         description={exercise.description}
         difficulty={exercise.difficulty}
       />
-      <ExerciseMovement movement={exercise.movement} />
+      <div className="flex flex-col lg:flex-row gap-4">
+        <ExerciseMovement movement={exercise.movement} />
+        <ExerciseMuscleGroupsWorked muscleGroupsWorked={exercise.muscleGroupsWorked} />
+      </div>
       <ExerciseStepByStepGuide stepByStepGuide={exercise.stepByStepGuide} />
-      <ExerciseMuscleGroupsWorked muscleGroupsWorked={exercise.muscleGroupsWorked} />
       <CommonMistakes commonMistakes={exercise.commonMistakes} />
       <ScalingOptions scalingOptions={exercise.scalingOptions} />
       <SafetyTips safetyTips={exercise.safetyTips} />
