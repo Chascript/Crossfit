@@ -23,7 +23,7 @@ export const ExerciseMuscleGroupsWorked: React.FC<Props> = ({ muscleGroupsWorked
             ))}
           </ul>
         </div>
-        <Divider className="h-4/5" orientation="vertical" />
+        <Divider className="h-inherit" orientation="vertical" />
         <div className="flex flex-col">
           <h3 className="text-lg font-medium">Secondary Muscle Groups</h3>
           <ul className="list-disc">

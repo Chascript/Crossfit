@@ -15,3 +15,7 @@ ul li {
 body,html {
   overflow-x: hidden;
 }
+
+.h-inherit {
+  height: inherit;
+}
