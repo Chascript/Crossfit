@@ -16,7 +16,7 @@ export const ExerciseTitle = ({
   difficulty,
 }: Props) => (
   <div className="flex justify-between">
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col flex-1 gap-4">
       <div className="flex flex-col sm:flex-col-reverse md:flex-row md:justify-between">
         <h1 className="text-5xl font-medium mb-4">{title}</h1>
         <div className="flex gap-4 justify-start content-end sm:justify-end">
