@@ -9,9 +9,9 @@ export default {
     stepByStepGuide: {
       description: 'This is a description of the exercise step by step guide.',
       instructions: [
-        'Step 1',
-        'Step 2',
-        'Step 3',
+        { name: 'name1', step: 'step1' },
+        { name: 'name2', step: 'step2' },
+        { name: 'name3', step: 'step3' },
       ],
       tips: [
         'Tip 1',
@@ -30,9 +30,10 @@ export const Thrusters: Story = {
     stepByStepGuide: {
       description: 'This how-to guide will walk you through the steps to perform a thruster, a compound exercise that combines a front squat with an overhead press. Thrusters target multiple muscle groups and are commonly used in CrossFit workouts for their effectiveness in building strength and improving cardiovascular endurance.',
       instructions: [
-        'Step 1: Front squat the barbell',
-        'Step 2: Push press the barbell',
-        'Step 3: Overhead squat the barbell',
+        { name: 'Starting Position', step: 'Start with the barbell resting on your shoulders, with your feet shoulder-width apart and toes slightly turned out.' },
+        { name: 'Front Squat', step: 'Perform a front squat by bending your knees and lowering your hips until your thighs are parallel to the ground.' },
+        { name: 'Overhead Press', step: 'As you stand up from the squat, simultaneously push the barbell overhead, extending your arms fully.' },
+        { name: 'Return to Starting Position', step: 'Lower the barbell back to your shoulders and repeat the movement for the desired number of repetitions.' },
       ],
       tips: [
         'Tip 1: Keep your elbows up',

@@ -18,10 +18,10 @@ export const crossfitExercises: Exercise[] = [
     stepByStepGuide: {
       description: 'This how-to guide will walk you through the steps to perform a thruster, a compound exercise that combines a front squat with an overhead press. Thrusters target multiple muscle groups and are commonly used in CrossFit workouts for their effectiveness in building strength and improving cardiovascular endurance.',
       instructions: [
-        'Start with the barbell resting on your shoulders, with your feet shoulder-width apart and toes slightly turned out.',
-        'Perform a front squat by bending your knees and lowering your hips until your thighs are parallel to the ground.',
-        'As you stand up from the squat, simultaneously push the barbell overhead, extending your arms fully.',
-        'Lower the barbell back to your shoulders and repeat the movement for the desired number of repetitions.',
+        { name: 'Starting Position', step: 'Start with the barbell resting on your shoulders, with your feet shoulder-width apart and toes slightly turned out.' },
+        { name: 'Front Squat', step: 'Perform a front squat by bending your knees and lowering your hips until your thighs are parallel to the ground.' },
+        { name: 'Overhead Press', step: 'As you stand up from the squat, simultaneously push the barbell overhead, extending your arms fully.' },
+        { name: 'Return to Starting Position', step: 'Lower the barbell back to your shoulders and repeat the movement for the desired number of repetitions.' },
       ],
       tips: ['Maintain a straight back throughout the movement', 'Keep your elbows up and in front of the barbell', 'Engage your core muscles to stabilize your spine'],
       images: ['https://example.com/step1.jpg', 'https://example.com/step2.jpg', 'https://example.com/step3.jpg', 'https://example.com/step4.jpg'],
@@ -74,10 +74,10 @@ export const crossfitExercises: Exercise[] = [
     stepByStepGuide: {
       description: 'This how-to guide will teach you how to perform double-unders, a jump rope exercise where the rope passes under the feet twice in one jump. Double-unders are popular in CrossFit and jump rope training for their ability to improve coordination, cardiovascular endurance, and foot speed.',
       instructions: [
-        'Hold the jump rope handles in each hand, with the rope behind you.',
-        'Swing the rope overhead and jump off the ground, timing the jump to allow the rope to pass under your feet twice before landing.',
-        'Keep your elbows close to your sides and wrists relaxed, using your wrists to rotate the rope.',
-        'Land softly on the balls of your feet and maintain a slight bend in your knees to absorb the impact.',
+        { name: 'Starting Position', step: 'Hold the jump rope handles in each hand, with the rope behind you.' },
+        { name: 'Swing and Jump', step: 'Swing the rope overhead and jump off the ground, timing the jump to allow the rope to pass under your feet twice before landing.' },
+        { name: 'Maintain Rhythm', step: 'Keep your elbows close to your sides and wrists relaxed, using your wrists to rotate the rope.' },
+        { name: 'Land Softly', step: 'Land softly on the balls of your feet and maintain a slight bend in your knees to absorb the impact.' },
       ],
       tips: ['Maintain a consistent rhythm and timing throughout the exercise', 'Practice singles (regular jump rope) before attempting double-unders', 'Focus on keeping the rope spinning smoothly with minimal wrist movement'],
       images: ['https://example.com/double-under-step1.jpg', 'https://example.com/double-under-step2.jpg', 'https://example.com/double-under-step3.jpg', 'https://example.com/double-under-step4.jpg'],
@@ -130,10 +130,10 @@ export const crossfitExercises: Exercise[] = [
     stepByStepGuide: {
       description: 'Learn how to do wall balls with this step-by-step guide. Wall balls involve squatting down with a medicine ball and launching it up to hit a target on the wall. This exercise targets multiple muscle groups, including the quadriceps, glutes, shoulders, and core, making it a staple in CrossFit workouts and functional fitness training routines.',
       instructions: [
-        'Stand facing a wall with your feet shoulder-width apart and hold the medicine ball at chest height.',
-        'Perform a squat by bending your knees and lowering your hips until your thighs are parallel to the ground.',
-        'As you stand up from the squat, use your legs and hips to propel the medicine ball upward towards the target on the wall.',
-        'Catch the ball as it rebounds off the wall and immediately descend into the next squat to continue the movement.',
+        { name: 'Starting Position', step: 'Stand facing a wall with your feet shoulder-width apart and hold the medicine ball at chest height.' },
+        { name: 'Squat', step: 'Perform a squat by bending your knees and lowering your hips until your thighs are parallel to the ground.' },
+        { name: 'Throw', step: 'As you stand up from the squat, use your legs and hips to propel the medicine ball upward towards the target on the wall.' },
+        { name: 'Catch and Repeat', step: 'Catch the ball as it rebounds off the wall and immediately descend into the next squat to continue the movement.' },
       ],
       tips: ['Maintain a smooth and controlled pace throughout the exercise', 'Focus on driving through the heels to generate power in the squat', 'Keep the chest up and elbows pointed forward to prevent the ball from dropping'],
       images: ['https://example.com/wall-ball-step1.jpg', 'https://example.com/wall-ball-step2.jpg', 'https://example.com/wall-ball-step3.jpg', 'https://example.com/wall-ball-step4.jpg'],
@@ -186,11 +186,13 @@ export const crossfitExercises: Exercise[] = [
     stepByStepGuide: {
       description: 'Master the burpee with this comprehensive how-to guide. Burpees are a full-body exercise that combines strength, cardio, and plyometrics. This guide will walk you through each step of the movement, from the squat to the push-up to the explosive jump, helping you improve cardiovascular fitness, muscular endurance, and total-body conditioning.',
       instructions: [
-        'Start standing with your feet shoulder-width apart and arms at your sides.',
-        'Lower into a squat position and place your hands on the ground in front of you.',
-        'Jump or step your feet back into a plank position and perform a push-up, lowering your chest to the ground.',
-        'Jump or step your feet forward to return to the squat position, then explosively jump into the air with your arms extended overhead.',
-        'Land softly and immediately lower back into the squat position to begin the next repetition.',
+        { name: 'Starting Position', step: 'Stand with your feet shoulder-width apart and arms at your sides.' },
+        { name: 'Squat and Drop', step: 'Lower into a squat position and place your hands on the floor in front of you.' },
+        { name: 'Kick Back', step: 'Jump or step your feet back into a plank position, keeping your body straight from head to heels.' },
+        { name: 'Push-Up', step: 'Perform a push-up by lowering your chest to the floor and then pressing back up to the plank position.' },
+        { name: 'Jump Forward', step: 'Jump or step your feet back towards your hands, returning to the squat position.' },
+        { name: 'Jump Up', step: 'Explosively jump into the air, reaching your arms overhead.' },
+        { name: 'Land and Repeat', step: 'Land softly and immediately lower back into the squat position to begin the next repetition.' },
       ],
       tips: ['Maintain a fast pace to maximize the cardiovascular benefits of the exercise', 'Focus on proper form and technique to prevent injury', 'Modify the exercise as needed by stepping instead of jumping and performing push-ups from the knees if necessary'],
       images: ['https://example.com/burpee-step1.jpg', 'https://example.com/burpee-step2.jpg', 'https://example.com/burpee-step3.jpg', 'https://example.com/burpee-step4.jpg', 'https://example.com/burpee-step5.jpg'],
@@ -243,10 +245,10 @@ export const crossfitExercises: Exercise[] = [
     stepByStepGuide: {
       description: ' Improve your core strength and grip endurance with this how-to guide for toes-to-bar. Toes-to-bar is a challenging gymnastics movement that involves hanging from a bar and lifting the feet up to touch the bar. This guide will provide you with detailed instructions and tips for mastering the movement, targeting the rectus abdominis, obliques, hip flexors, and more.',
       instructions: [
-        'Hang from a pull-up bar with an overhand grip, arms fully extended and feet off the ground.',
-        'Engage your core muscles and lift your legs upward, aiming to touch your toes to the bar.',
-        'Control the descent back to the starting position, maintaining tension in the core muscles.',
-        'Repeat the movement for the desired number of repetitions, focusing on smooth and controlled motion.',
+        { name: 'Hanging Position', step: 'Hang from a pull-up bar with an overhand grip, arms fully extended and feet off the ground.' },
+        { name: 'Leg Lift', step: 'Engage your core muscles and lift your legs upward, aiming to touch your toes to the bar.' },
+        { name: 'Controlled Descent', step: 'Control the descent back to the starting position, maintaining tension in the core muscles.' },
+        { name: 'Repeat', step: 'Repeat the movement for the desired number of repetitions, focusing on smooth and controlled motion.' },
       ],
       tips: ['Maintain a consistent rhythm and breathing pattern throughout the exercise', 'Use momentum from the swing to assist with lifting the legs upward', 'Focus on quality repetitions and full range of motion rather than speed'],
       images: ['https://example.com/toes-to-bar-step1.jpg', 'https://example.com/toes-to-bar-step2.jpg', 'https://example.com/toes-to-bar-step3.jpg', 'https://example.com/toes-to-bar-step4.jpg'],

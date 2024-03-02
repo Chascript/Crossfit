@@ -7,9 +7,14 @@ export type Movement = {
   commonUsage: string;
 };
 
+export type Step = {
+  name: string;
+  step: string;
+}
+
 export type StepByStepGuide = {
   description: string;
-  instructions: string[];
+  instructions: Step[];
   tips: string[];
   images?: string[];
 };

@@ -17,7 +17,20 @@ export const ExerciseStepByStepGuide = ({
     name: `How to do a ${name}`,
     description: stepByStepGuide.description,
     step: stepByStepGuide.instructions.map((instruction, index) => ({
-      '@type': 'HowToStep', text: instruction, name: `Step ${index + 1}`, url: `https://crossfit-delta.vercel.app/exercises/${name}#step-${index + 1}`,
+      '@type': 'HowToSection',
+      name: instruction.name,
+      position: `${index + 1}`,
+      itemListElement: [{
+        '@type': 'HowToStep',
+        position: `${index + 1}`,
+        itemListElement: [
+          {
+            '@type': 'HowToDirection',
+            position: '1',
+            text: instruction.step,
+          },
+        ],
+      }],
     })),
   };
 
@@ -34,11 +47,14 @@ export const ExerciseStepByStepGuide = ({
         <p>{stepByStepGuide.description}</p>
         <ol className="list-decimal pl-6">
           {stepByStepGuide.instructions.map((instruction, i) => (
-            <li id={`step-${i + 1}`} key={instruction}>{instruction}</li>
+            <li id={`step-${i + 1}`} key={instruction.name}>
+              <h3 className="text-lg font-medium">{instruction.name}</h3>
+              {instruction.step}
+            </li>
           ))}
         </ol>
         <div>
-          <h3 className="text-lg font-semibold mb-2">Tips</h3>
+          <h4 className="text-lg font-semibold mb-2">Tips</h4>
           <ul className="list-disc">
             {stepByStepGuide.tips.map((tip) => (
               <li key={tip}>{tip}</li>
