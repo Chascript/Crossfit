@@ -1,6 +1,7 @@
 import React from 'react';
 import { StepByStepGuide } from '@/src/types';
 import { Card, CardBody, CardHeader } from '@nextui-org/react';
+import BulletList from '../../bullet-list';
 
 export interface Props {
   name: string;
@@ -53,14 +54,11 @@ export const ExerciseStepByStepGuide = ({
             </li>
           ))}
         </ol>
-        <div>
-          <h4 className="text-lg font-semibold mb-2">Tips</h4>
-          <ul className="list-disc">
-            {stepByStepGuide.tips.map((tip) => (
-              <li key={tip}>{tip}</li>
-            ))}
-          </ul>
-        </div>
+        <BulletList
+          heading="Tips"
+          list={stepByStepGuide.tips}
+          underlined={false}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
