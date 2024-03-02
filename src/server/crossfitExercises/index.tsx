@@ -6,7 +6,7 @@ export const fetchCrossfitExercises = async () => {
 };
 
 export const fetchCrossfitExercise = async (exercise: string) => {
-  const fetchedCrossfitExercise = await crossfitExercises.find((ex) => ex.title.toLowerCase() === exercise);
+  const fetchedCrossfitExercise = await crossfitExercises.find((ex) => ex.link.toLowerCase() === exercise);
   if (fetchedCrossfitExercise) return fetchedCrossfitExercise;
   return undefined;
 };
