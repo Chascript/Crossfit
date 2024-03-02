@@ -35,7 +35,7 @@ export const ExerciseStepByStepGuide = ({
   };
 
   return (
-    <Card className="p-6 rounded-lg shadow-md mb-4 border border-black-400">
+    <Card className="p-3 rounded-lg shadow-md mb-4 border border-black-400">
       <CardHeader>
         <h2 className="text-2xl font-semibold">
           How To Do A
