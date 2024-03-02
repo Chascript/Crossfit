@@ -106,7 +106,7 @@ const ExerciseListView = ({
   };
 
   return (
-    <div className="container flex flex-col gap-4 p-4 mx-20">
+    <div className="container flex flex-col gap-4 p-4">
       <Input
         type="search"
         label="Search"
