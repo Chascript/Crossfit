@@ -7,6 +7,7 @@ export default {
   args: {
     name: 'Exercise Name',
     stepByStepGuide: {
+      description: 'This is a description of the exercise step by step guide.',
       instructions: [
         'Step 1',
         'Step 2',
@@ -27,6 +28,7 @@ export const Thrusters: Story = {
   args: {
     name: 'Thrusters',
     stepByStepGuide: {
+      description: 'This how-to guide will walk you through the steps to perform a thruster, a compound exercise that combines a front squat with an overhead press. Thrusters target multiple muscle groups and are commonly used in CrossFit workouts for their effectiveness in building strength and improving cardiovascular endurance.',
       instructions: [
         'Step 1: Front squat the barbell',
         'Step 2: Push press the barbell',

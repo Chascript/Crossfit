@@ -16,6 +16,7 @@ export const crossfitExercises: Exercise[] = [
       commonUsage: 'Thrusters are commonly used in CrossFit workouts, often as part of high-intensity interval training (HIIT) or as a standalone strength exercise.',
     },
     stepByStepGuide: {
+      description: 'This how-to guide will walk you through the steps to perform a thruster, a compound exercise that combines a front squat with an overhead press. Thrusters target multiple muscle groups and are commonly used in CrossFit workouts for their effectiveness in building strength and improving cardiovascular endurance.',
       instructions: [
         'Start with the barbell resting on your shoulders, with your feet shoulder-width apart and toes slightly turned out.',
         'Perform a front squat by bending your knees and lowering your hips until your thighs are parallel to the ground.',
@@ -71,6 +72,7 @@ export const crossfitExercises: Exercise[] = [
       commonUsage: 'Double-unders are commonly included in CrossFit workouts and jump rope training routines as a high-intensity cardio exercise.',
     },
     stepByStepGuide: {
+      description: 'This how-to guide will teach you how to perform double-unders, a jump rope exercise where the rope passes under the feet twice in one jump. Double-unders are popular in CrossFit and jump rope training for their ability to improve coordination, cardiovascular endurance, and foot speed.',
       instructions: [
         'Hold the jump rope handles in each hand, with the rope behind you.',
         'Swing the rope overhead and jump off the ground, timing the jump to allow the rope to pass under your feet twice before landing.',
@@ -126,6 +128,7 @@ export const crossfitExercises: Exercise[] = [
       commonUsage: 'Wall balls are commonly included in CrossFit workouts and functional fitness training routines as a full-body conditioning exercise.',
     },
     stepByStepGuide: {
+      description: 'Learn how to do wall balls with this step-by-step guide. Wall balls involve squatting down with a medicine ball and launching it up to hit a target on the wall. This exercise targets multiple muscle groups, including the quadriceps, glutes, shoulders, and core, making it a staple in CrossFit workouts and functional fitness training routines.',
       instructions: [
         'Stand facing a wall with your feet shoulder-width apart and hold the medicine ball at chest height.',
         'Perform a squat by bending your knees and lowering your hips until your thighs are parallel to the ground.',
@@ -181,6 +184,7 @@ export const crossfitExercises: Exercise[] = [
       commonUsage: 'Burpees are commonly used in CrossFit workouts, circuit training, and HIIT workouts as a high-intensity conditioning exercise.',
     },
     stepByStepGuide: {
+      description: 'Master the burpee with this comprehensive how-to guide. Burpees are a full-body exercise that combines strength, cardio, and plyometrics. This guide will walk you through each step of the movement, from the squat to the push-up to the explosive jump, helping you improve cardiovascular fitness, muscular endurance, and total-body conditioning.',
       instructions: [
         'Start standing with your feet shoulder-width apart and arms at your sides.',
         'Lower into a squat position and place your hands on the ground in front of you.',
@@ -237,6 +241,7 @@ export const crossfitExercises: Exercise[] = [
       commonUsage: 'Toes-to-bar is commonly included in CrossFit workouts, gymnastics training, and functional fitness routines as a challenging core exercise.',
     },
     stepByStepGuide: {
+      description: ' Improve your core strength and grip endurance with this how-to guide for toes-to-bar. Toes-to-bar is a challenging gymnastics movement that involves hanging from a bar and lifting the feet up to touch the bar. This guide will provide you with detailed instructions and tips for mastering the movement, targeting the rectus abdominis, obliques, hip flexors, and more.',
       instructions: [
         'Hang from a pull-up bar with an overhand grip, arms fully extended and feet off the ground.',
         'Engage your core muscles and lift your legs upward, aiming to touch your toes to the bar.',

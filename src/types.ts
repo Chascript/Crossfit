@@ -8,6 +8,7 @@ export type Movement = {
 };
 
 export type StepByStepGuide = {
+  description: string;
   instructions: string[];
   tips: string[];
   images?: string[];
