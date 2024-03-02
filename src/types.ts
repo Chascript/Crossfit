@@ -10,7 +10,7 @@ export type Movement = {
 export type StepByStepGuide = {
   instructions: string[];
   tips: string[];
-  images: string[];
+  images?: string[];
 };
 
 export type MuscleGroupsWorked = {

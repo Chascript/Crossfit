@@ -3,10 +3,10 @@ import { Exercise } from '@/src/types';
 export const crossfitExercises: Exercise[] = [
   {
     id: 1,
-    title: 'Thrusters',
+    title: 'Thruster',
     description: 'Combines a front squat with an overhead press, targeting multiple muscle groups including legs, shoulders, and core.',
     image: 'https://images.unsplash.com/photo-1647438275887-6cf90f1d15f7?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    link: 'thrusters',
+    link: 'thruster',
     tags: ['CrossFit', 'Compound', 'Workout'],
     difficulty: 4,
     movement: {
@@ -58,10 +58,10 @@ export const crossfitExercises: Exercise[] = [
   },
   {
     id: 2,
-    title: 'Double-Unders',
+    title: 'Double-Under',
     description: 'A jump rope exercise where the rope passes under the feet twice in one jump, improving coordination and cardiovascular endurance.',
     image: 'https://d3h9ln6psucegz.cloudfront.net/wp-content/uploads/2017/01/Master-the-Double-Under.jpg',
-    link: 'double-unders',
+    link: 'double-under',
     tags: ['CrossFit', 'Cardio', 'Skill'],
     difficulty: 5,
     movement: {
@@ -113,10 +113,10 @@ export const crossfitExercises: Exercise[] = [
   },
   {
     id: 3,
-    title: 'Wall Balls',
+    title: 'Wall Ball',
     description: 'Involves squatting down with a medicine ball and then launching it up to hit a target on the wall, targeting legs, shoulders, and core.',
     image: 'https://media.istockphoto.com/id/1555667568/photo/muscular-woman-doing-exercise-with-heavy-medicine-ball-in-gym.webp?s=612x612&w=is&k=20&c=u1j69v98LaVRMGRDmA-ESxT7olXMWkLxJaOb7x0DRbE=',
-    link: 'wall-balls',
+    link: 'wall-ball',
     tags: ['CrossFit', 'Strength', 'Functional'],
     difficulty: 2,
     movement: {
@@ -168,10 +168,10 @@ export const crossfitExercises: Exercise[] = [
   },
   {
     id: 4,
-    title: 'Burpees',
+    title: 'Burpee',
     description: 'A full-body exercise that involves dropping to the ground, performing a push-up, and then jumping explosively, targeting multiple muscle groups and improving cardiovascular fitness.',
     image: 'https://media.istockphoto.com/id/1414247906/photo/young-caucasian-woman-doing-burpees-at-the-modern-gym.jpg?s=1024x1024&w=is&k=20&c=QzP2lLU97cump9wX6iwOUYlys3jg2duTFci5eH5P_SM=',
-    link: 'burpees',
+    link: 'burpee',
     tags: ['CrossFit', 'Cardio', 'Bodyweight'],
     difficulty: 2,
     movement: {

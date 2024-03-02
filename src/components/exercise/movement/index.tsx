@@ -30,7 +30,7 @@ export const ExerciseMovement = ({
         <h3 className="text-lg font-medium">
           Benefits
         </h3>
-        <ul className="list-disc pl-5">
+        <ul className="list-disc">
           {movement.benefits.map((benefit) => (
             <li key={benefit}>{benefit}</li>
           ))}

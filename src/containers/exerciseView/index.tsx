@@ -35,7 +35,7 @@ export const ExerciseView = async ({ crossfitExercise }: Props) => {
         <ExerciseMovement movement={exercise.movement} />
         <ExerciseMuscleGroupsWorked muscleGroupsWorked={exercise.muscleGroupsWorked} />
       </div>
-      <ExerciseStepByStepGuide stepByStepGuide={exercise.stepByStepGuide} />
+      <ExerciseStepByStepGuide name={exercise.title} stepByStepGuide={exercise.stepByStepGuide} />
       <CommonMistakes commonMistakes={exercise.commonMistakes} />
       <ScalingOptions scalingOptions={exercise.scalingOptions} />
       <SafetyTips safetyTips={exercise.safetyTips} />
