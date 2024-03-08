@@ -25,10 +25,10 @@ export const ExerciseSampleWorkout = ({
 
   return (
     <Card className="p-3 rounded-lg shadow-md border border-black-400">
-      <h2 className="text-lg font-medium">{sampleWorkout.title}</h2>
+      <h3 className="text-lg font-medium">{sampleWorkout.title}</h3>
       <div>
         <p>{sampleWorkout.description}</p>
-        <h3 className="text-md font-medium">Equipment you will need</h3>
+        <h4 className="text-md font-medium">Equipment you will need</h4>
         <ul>
           {' '}
           {equipment ? (
@@ -37,7 +37,7 @@ export const ExerciseSampleWorkout = ({
             <li>Just your body!</li>
           )}
         </ul>
-        <h3 className="text-md font-medium">Steps</h3>
+        <h4 className="text-md font-medium">Steps</h4>
         <ul className="list-disc">
           {sampleWorkout.steps.map((step) => (
             <li key={step}>{step}</li>
