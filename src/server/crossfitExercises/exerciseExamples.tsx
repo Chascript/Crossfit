@@ -7,6 +7,7 @@ export const crossfitExercises: Exercise[] = [
     description: 'Combines a front squat with an overhead press, targeting multiple muscle groups including legs, shoulders, and core.',
     image: 'https://images.unsplash.com/photo-1647438275887-6cf90f1d15f7?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     link: 'thruster',
+    equipment: ['Barbell', 'Weight Plates'],
     tags: ['CrossFit', 'Compound', 'Workout'],
     difficulty: 4,
     movement: {
@@ -64,6 +65,7 @@ export const crossfitExercises: Exercise[] = [
     image: 'https://d3h9ln6psucegz.cloudfront.net/wp-content/uploads/2017/01/Master-the-Double-Under.jpg',
     link: 'double-under',
     tags: ['CrossFit', 'Cardio', 'Skill'],
+    equipment: ['Jump Rope'],
     difficulty: 5,
     movement: {
       description: 'Double-unders involve jumping rope while making two passes of the rope for every jump. It requires coordination, timing, and endurance.',
@@ -120,6 +122,7 @@ export const crossfitExercises: Exercise[] = [
     image: 'https://media.istockphoto.com/id/1555667568/photo/muscular-woman-doing-exercise-with-heavy-medicine-ball-in-gym.webp?s=612x612&w=is&k=20&c=u1j69v98LaVRMGRDmA-ESxT7olXMWkLxJaOb7x0DRbE=',
     link: 'wall-ball',
     tags: ['CrossFit', 'Strength', 'Functional'],
+    equipment: ['Medicine Ball', 'Wall Target'],
     difficulty: 2,
     movement: {
       description: 'Wall balls involve squatting down with a medicine ball and then launching it up to hit a target on the wall. It combines elements of strength, power, and accuracy.',
@@ -235,6 +238,7 @@ export const crossfitExercises: Exercise[] = [
     image: 'https://barbend.com/wp-content/uploads/2021/02/BarBend-Article-Image-760-x-427-38.jpg',
     link: 'toes-to-bar',
     tags: ['CrossFit', 'Core', 'Skill'],
+    equipment: ['Pull-Up Bar'],
     difficulty: 5,
     movement: {
       description: 'Toes-to-bar is a challenging gymnastics movement that requires hanging from a bar and lifting the feet up to touch the bar. It targets the core muscles and requires strength, flexibility, and coordination.',
