@@ -2,6 +2,7 @@ import React from 'react';
 import { StepByStepGuide } from '@/src/types';
 import { Card, CardBody, CardHeader } from '@nextui-org/react';
 import BulletList from '../../bullet-list';
+import GenerateSchema from '../../generate-schema';
 
 export interface Props {
   name: string;
@@ -34,9 +35,10 @@ export const ExerciseStepByStepGuide = ({
       }],
     })),
   };
+  const ExerciseGuideSchema = <GenerateSchema jsonLd={jsonLd} />;
 
   return (
-    <Card className="p-3 rounded-lg shadow-md mb-4 border border-black-400">
+    <Card className="p-3 rounded-lg shadow-md border border-black-400">
       <CardHeader>
         <h2 className="text-2xl font-semibold">
           How To Do A
@@ -59,10 +61,7 @@ export const ExerciseStepByStepGuide = ({
           list={stepByStepGuide.tips}
           underlined={false}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        {ExerciseGuideSchema}
       </CardBody>
     </Card>
   );

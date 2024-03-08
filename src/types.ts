@@ -49,6 +49,7 @@ export type Exercise = {
   description: string;
   image: string;
   link: string;
+  equipment?: string[];
   tags: string[];
   difficulty: DifficultyValue;
   movement: Movement;

@@ -1,5 +1,8 @@
 import React from 'react';
 
+import BulletList from '@/src/components/bullet-list';
+import { Card } from '@nextui-org/react';
+import { ExerciseTags } from '@/src/components/tags';
 import { fetchCrossfitExercise } from '../../server/crossfitExercises';
 import { Exercise } from '../../types';
 import NotFound from '../../app/exercises/not-found';
@@ -8,9 +11,6 @@ import ExerciseTitle from '../../components/exercise/title';
 import { ExerciseMovement } from '../../components/exercise/movement';
 import { ExerciseStepByStepGuide } from '../../components/exercise/step-by-step-guide';
 import { ExerciseMuscleGroupsWorked } from '../../components/exercise/muscle-groups-worked';
-import { CommonMistakes } from '../../components/exercise/common-mistakes';
-import { ScalingOptions } from '../../components/exercise/scaling-options';
-import { SafetyTips } from '../../components/exercise/safety-tips';
 import { ExerciseSampleWorkout } from '../../components/exercise/sample-workout';
 
 export interface Props {
@@ -25,7 +25,7 @@ export const ExerciseView = async ({ crossfitExercise }: Props) => {
   }
 
   return (
-    <div className="container flex flex-col gap-4 mx-2 sm:mx-auto mt-8">
+    <div className="container flex flex-col gap-4 mx-2 sm:mx-auto my-8">
       <ExerciseTitle
         title={exercise.title}
         description={exercise.description}
@@ -36,19 +36,34 @@ export const ExerciseView = async ({ crossfitExercise }: Props) => {
         <ExerciseMuscleGroupsWorked muscleGroupsWorked={exercise.muscleGroupsWorked} />
       </div>
       <ExerciseStepByStepGuide name={exercise.title} stepByStepGuide={exercise.stepByStepGuide} />
-      <CommonMistakes commonMistakes={exercise.commonMistakes} />
-      <ScalingOptions scalingOptions={exercise.scalingOptions} />
-      <SafetyTips safetyTips={exercise.safetyTips} />
-      <ExerciseSampleWorkout sampleWorkout={exercise.sampleWorkout} />
-      <div className="flex flex-col md:flex-row">
-        <div className="md:w-1/2">
-          <p className="mb-4">
-            <strong>Tags:</strong>
-            {' '}
-            {exercise.tags.join(', ')}
-          </p>
-        </div>
-      </div>
+      <Card className="p-3 rounded-lg shadow-md border border-black-400">
+        <BulletList
+          heading="Common Mistakes"
+          list={exercise.commonMistakes}
+          underlined={false}
+        />
+      </Card>
+      <Card className="p-3 rounded-lg shadow-md border border-black-400">
+        <BulletList
+          heading="ScalingOptions"
+          list={exercise.scalingOptions}
+          underlined={false}
+        />
+      </Card>
+      <Card className="p-3 rounded-lg shadow-md border border-black-400">
+        <BulletList
+          heading="Safety Tips"
+          list={exercise.safetyTips}
+          underlined={false}
+        />
+      </Card>
+      <ExerciseSampleWorkout
+        sampleWorkout={exercise.sampleWorkout}
+        equipment={exercise.equipment}
+      />
+      <Card className="p-3 rounded-lg shadow-md border border-black-400">
+        <ExerciseTags tags={exercise.tags} />
+      </Card>
     </div>
   );
 };
