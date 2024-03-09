@@ -16,6 +16,9 @@ export const Header = () => {
         wrapper: 'max-w-full',
       }}
       onMenuOpenChange={setIsMenuOpen}
+      shouldHideOnScroll
+      isBordered
+      isBlurred
     >
       <NavbarContent>
         <NavbarBrand>

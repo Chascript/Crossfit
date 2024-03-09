@@ -68,7 +68,7 @@ export const Hero = ({
       <div className="grid grid-rows-6 md:grid-cols-6 lg:grid-cols-3 lg:grid-rows-3 gap-2 h-[600px] lg:col-span-3 lg:gap-8">
         {/* First section */}
         <div
-          className={`row-span-5 sm:pl-4 sm:pb-4 md:col-span-6 lg:col-span-3 lg:row-span-2 relative bg-cover p-2 lg:bg-none lg:bg-gray-200 rounded-[30px] lg:pl-8 lg:pt-8 lg:pb-8 lg:pr-2 flex flex-col justify-end lg:justify-between lg:transition-transform duration-1000 ${showFirstSection ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}
+          className={`row-span-5 sm:pl-4 sm:pb-4 md:col-span-6 lg:col-span-3 lg:row-span-2 relative bg-cover p-2 lg:bg-none lg:bg-gray-200 rounded-[30px] lg:pl-8 lg:pt-8 lg:pb-8 lg:pr-2 flex flex-col justify-end lg:justify-between lg:transition-transform duration-1000 ${showFirstSection ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}
           style={backgroundImageStyle}
         >
           <div className="flex flex-col p-1 lg:justify-start lg:mt-4 z-10">
@@ -82,7 +82,7 @@ export const Hero = ({
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 rounded-[30px] lg:hidden" />
         </div>
         {/* Second section */}
-        <div className={`hidden sm:block md:col-span-4 row-span-1 lg:col-span-2 relative rounded-[30px] p-8 transition-transform duration-1000 ${showSecondSection ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
+        <div className={`hidden sm:block md:col-span-4 row-span-1 lg:col-span-2 relative rounded-[30px] p-8 transition-transform duration-1000 ${showSecondSection ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
           <Image src={secondaryImage} alt="Hero image" layout="fill" objectFit="cover" className="rounded-[30px] transform scale-x-[-1]" />
         </div>
         {/* Third section */}
@@ -96,7 +96,7 @@ export const Hero = ({
         </Link>
       </div>
       {/* Right side (image) */}
-      <div className={`hidden lg:block lg:col-span-3 w-full h-full relative rounded-[30px] transition-transform duration-1000 ${showImage ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
+      <div className={`hidden lg:block lg:col-span-3 w-full h-full relative rounded-[30px] transition-transform duration-1000 ${showImage ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
         <Image src={primaryImage} alt="Hero image" layout="fill" objectFit="cover" className=" rounded-[30px]" />
       </div>
     </div>

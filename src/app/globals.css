@@ -12,10 +12,6 @@ ul li {
   margin-bottom: 0.5em; 
 }
 
-body,html {
-  overflow-x: hidden;
-}
-
 .h-inherit {
   height: inherit;
 }
