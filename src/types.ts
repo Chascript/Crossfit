@@ -60,3 +60,8 @@ export type Exercise = {
   safetyTips: string[];
   sampleWorkout: SampleWorkout;
 };
+
+export type ExerciseNav = {
+  title: string;
+  link: string;
+};

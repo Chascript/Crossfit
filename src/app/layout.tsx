@@ -4,8 +4,8 @@ import type { Metadata } from 'next';
 import { Fredoka } from 'next/font/google';
 import './globals.css';
 import Providers from './providers';
-import Header from '../components/header';
 import Footer from '../components/footer';
+import { HeaderView } from '../containers/headerView';
 
 const inter = Fredoka({ subsets: ['latin'] });
 
@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`}>
         <Providers>
-          <Header />
+          <HeaderView />
           <main>
             {children}
           </main>

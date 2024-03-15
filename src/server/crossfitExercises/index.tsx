@@ -11,4 +11,13 @@ export const fetchCrossfitExercise = async (exercise: string) => {
   return undefined;
 };
 
-export default { fetchCrossfitExercises, fetchCrossfitExercise };
+export const fetchCrossfitExerciseNav = async () => {
+  const fetchedCrossfitExerciseNav = await crossfitExercises.map((ex) => ({
+    title: ex.title,
+    description: ex.description,
+    link: ex.link,
+  }));
+  return fetchedCrossfitExerciseNav;
+};
+
+export default { fetchCrossfitExercises, fetchCrossfitExercise, fetchCrossfitExerciseNav };
