@@ -38,7 +38,13 @@ export const ExerciseDropDowns = ({
         <DropdownItem
           key={item.link}
         >
-          {item.title}
+          <Link
+            color="foreground"
+            href={`/exercises/${item.link}`}
+            className="box-border w-full"
+          >
+            {item.title}
+          </Link>
         </DropdownItem>
       )}
     </DropdownMenu>
