@@ -48,7 +48,7 @@ export const ExerciseStepByStepGuide = ({
       </CardHeader>
       <CardBody className="space-y-4">
         <p>{stepByStepGuide.description}</p>
-        <ol className="list-decimal pl-6">
+        <ol className="list-decimal ml-3">
           {stepByStepGuide.instructions.map((instruction, i) => (
             <li id={`step-${i + 1}`} key={instruction.name}>
               <h3 className="text-lg font-medium">{instruction.name}</h3>

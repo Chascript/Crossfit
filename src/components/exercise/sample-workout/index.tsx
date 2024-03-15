@@ -24,12 +24,12 @@ export const ExerciseSampleWorkout = ({
   const ExercisePlanSchema = <GenerateSchema jsonLd={jsonLd} />;
 
   return (
-    <Card className="p-3 rounded-lg shadow-md border border-black-400">
+    <Card className="p-6 rounded-lg shadow-md border border-black-400">
       <h3 className="text-lg font-medium">{sampleWorkout.title}</h3>
       <div>
         <p>{sampleWorkout.description}</p>
         <h4 className="text-md font-medium">Equipment you will need</h4>
-        <ul>
+        <ul className="list-disc ml-5">
           {' '}
           {equipment ? (
             equipment.map((item) => <li key={item}>{item}</li>)
@@ -38,7 +38,7 @@ export const ExerciseSampleWorkout = ({
           )}
         </ul>
         <h4 className="text-md font-medium">Steps</h4>
-        <ul className="list-disc">
+        <ul className="list-disc ml-5">
           {sampleWorkout.steps.map((step) => (
             <li key={step}>{step}</li>
           ))}

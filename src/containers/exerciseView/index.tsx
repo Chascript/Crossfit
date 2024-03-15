@@ -36,21 +36,21 @@ export const ExerciseView = async ({ crossfitExercise }: Props) => {
         <ExerciseMuscleGroupsWorked muscleGroupsWorked={exercise.muscleGroupsWorked} />
       </div>
       <ExerciseStepByStepGuide name={exercise.title} stepByStepGuide={exercise.stepByStepGuide} />
-      <Card className="p-3 rounded-lg shadow-md border border-black-400">
+      <Card className="p-6 rounded-lg shadow-md border border-black-400">
         <BulletList
           heading="Common Mistakes"
           list={exercise.commonMistakes}
           underlined={false}
         />
       </Card>
-      <Card className="p-3 rounded-lg shadow-md border border-black-400">
+      <Card className="p-6 rounded-lg shadow-md border border-black-400">
         <BulletList
           heading="ScalingOptions"
           list={exercise.scalingOptions}
           underlined={false}
         />
       </Card>
-      <Card className="p-3 rounded-lg shadow-md border border-black-400">
+      <Card className="p-6 rounded-lg shadow-md border border-black-400">
         <BulletList
           heading="Safety Tips"
           list={exercise.safetyTips}

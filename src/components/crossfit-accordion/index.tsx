@@ -55,7 +55,7 @@ export const CrossfitAccordion = ({
 
   return (
 
-    <div ref={accordionRef} className={`mx-10 my-12 transition-transform duration-2000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-52'}`}>
+    <div ref={accordionRef} className={`mx-10 my-12 transition-transform duration-2000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-52'}`}>
       {title && <h2 className="text-3xl font-medium pl-0 pt-0 p-4">{title}</h2>}
       {subText && <p className="text-base mb-3 max-w-4xl">{subText}</p>}
       <Accordion
