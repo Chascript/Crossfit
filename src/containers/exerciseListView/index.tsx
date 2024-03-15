@@ -24,26 +24,25 @@ const ExerciseListView = ({
   const [filteredByQueryExercises, setFilteredByQueryExercises] = useState<Exercise[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedDifficulty, setSelectedDifficulty] = useState<number[]>([]);
-  const [uniqueDifficulties, setUniqueDifficulties] = useState<number[]>([]);
-
-  const updateUniqueDifficulties = (allExercises: Exercise[]) => {
-    const uniqueDifficulty: number[] = [];
-    allExercises.forEach((exercise: Exercise) => {
-      if (!uniqueDifficulty.includes(exercise.difficulty)) {
-        uniqueDifficulty.push(exercise.difficulty);
-      }
-    });
-    uniqueDifficulty.sort((a: number, b: number) => a - b);
-    setUniqueDifficulties(uniqueDifficulty);
-  };
-
-  useEffect(() => {
-    updateUniqueDifficulties(filteredByQueryExercises);
-  }, [filteredByQueryExercises, searchQuery]);
+  const difficultyFilters = [{
+    value: 1,
+    label: '*',
+  }, {
+    value: 2,
+    label: '**',
+  }, {
+    value: 3,
+    label: '***',
+  }, {
+    value: 4,
+    label: '****',
+  }, {
+    value: 5,
+    label: '*****',
+  }];
 
   useEffect(() => {
     setExercises(crossfitExercises);
-    updateUniqueDifficulties(crossfitExercises);
   }, [crossfitExercises]);
 
   useEffect(() => {
@@ -125,14 +124,14 @@ const ExerciseListView = ({
         radius="full"
         placeholder="Select a Difficulty"
         selectionMode="multiple"
-        items={uniqueDifficulties.map((difficulty) => ({ value: difficulty, label: difficulty.toString() }))}
+        items={difficultyFilters.map((difficulty) => ({ value: difficulty.value, label: difficulty.label }))}
         onChange={handleDifficultyChange}
         className="max-w-xs"
       >
         {(difficulty) => <SelectItem key={difficulty.value} value={difficulty.value}>{difficulty.label}</SelectItem>}
       </Select>
       <div className="flex flex-wrap justify-start gap-4">
-        {filteredExercises.length === 0
+        {filteredExercises.length === 0 && searchQuery === '' && selectedDifficulty.length === 0
           ? (
             crossfitExercises.map((exercise) => (
               <ExerciseCard
