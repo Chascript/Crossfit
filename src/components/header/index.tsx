@@ -53,7 +53,7 @@ export const Header = ({
             color="foreground"
             href="/exercises"
           >
-            Exercise List
+            View All Exercises
           </Link>
         </NavbarItem>
       </NavbarContent>
