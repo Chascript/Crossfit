@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
   Button, ButtonGroup, Card, CardBody, CardFooter, CardHeader, Divider,
 } from '@nextui-org/react';
@@ -9,25 +8,45 @@ export interface Props {
   setIsScaled: (isScaled: boolean) => void;
 }
 
-export const WorkoutOfTheDayCard = ({
-  isScaled,
-  setIsScaled,
-}:Props) => {
-  const scaledWorkout = (
-    <ul>
-      <li>15 Thrusters (lighter weights)</li>
-      <li>40 Single-unders</li>
-      <li>10 Knee Raises</li>
-    </ul>
-  );
-
-  const rxWorkout = (
-    <ul>
-      <li>15 Thrusters (95/65 lbs)</li>
-      <li>20 Double-unders</li>
-      <li>10 Toes-to-bar</li>
-    </ul>
-  );
+export const WorkoutOfTheDayCard = ({ isScaled, setIsScaled }: Props) => {
+  const workout = {
+    standard: [
+      {
+        name: 'Power Clean',
+        reps: 5,
+        weight: '135 lbs',
+      },
+      {
+        name: 'Push Press',
+        reps: 10,
+        weight: '95 lbs',
+      },
+      {
+        name: 'Toes-to-Bar',
+        reps: 15,
+        weight: 'Bodyweight',
+      },
+    ],
+    scaled: [
+      {
+        name: 'Dumbbell Power Clean',
+        reps: 5,
+        weight: '35 lbs',
+      },
+      {
+        name: 'Push Press',
+        reps: 10,
+        weight: '40 lbs',
+      },
+      {
+        name: 'Hanging Knee Raises',
+        reps: 15,
+        weight: 'Assisted as needed',
+      },
+    ],
+    rounds: 5,
+    type: 'AMRAP',
+  };
 
   const workoutFormat = 'AMRAP in 13 minutes';
 
@@ -41,10 +60,27 @@ export const WorkoutOfTheDayCard = ({
       </CardHeader>
       <Divider className="border-gray-700" />
       <CardBody className="flex flex-col text-gray-200 bg-gray-800 p-6">
-        {' '}
-        {isScaled ? scaledWorkout : rxWorkout}
+        <ul>
+          {workout[isScaled ? 'scaled' : 'standard'].map((exercise) => (
+            <li key={exercise.name}>
+              {exercise.reps}
+              {' '}
+              {exercise.name}
+              {' '}
+              (
+              {exercise.weight}
+              )
+            </li>
+          ))}
+        </ul>
+        <p className="text-gray-300">
+          {workout.rounds}
+          {' '}
+          rounds of
+          {' '}
+          {workout.type}
+        </p>
         <p className="text-gray-300">{workoutFormat}</p>
-        {' '}
       </CardBody>
       <Divider className="border-gray-700" />
       <CardFooter className="flex justify-center bg-gray-700 py-4 rounded-b-lg">
@@ -58,7 +94,6 @@ export const WorkoutOfTheDayCard = ({
         </ButtonGroup>
       </CardFooter>
     </Card>
-
   );
 };
 
