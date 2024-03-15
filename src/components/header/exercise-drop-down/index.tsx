@@ -31,7 +31,7 @@ export const ExerciseDropDowns = ({
       items={exerciseNav}
       className="w-[340px]"
       itemClasses={{
-        base: 'gap-4 ml-0',
+        base: 'gap-4',
       }}
     >
       {(item) => (
