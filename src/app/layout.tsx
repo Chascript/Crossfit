@@ -3,6 +3,9 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { Fredoka } from 'next/font/google';
 import './globals.css';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
+import Script from 'next/script';
 import Providers from './providers';
 import Footer from '../components/footer';
 import { HeaderView } from '../containers/headerView';
@@ -19,8 +22,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_MEASUREMENT_ID;
   return (
     <html lang="en">
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${GA_MEASUREMENT_ID}');
+  `}
+      </Script>
+      <meta name="google-site-verification" content="YJm4mKNsj-7nu0pxrrXuQW_nXmszGcreEsvbcVS2JD8" />
       <body className={`${inter.className}`}>
         <Providers>
           <HeaderView />
@@ -29,6 +46,8 @@ export default function RootLayout({
           </main>
           <Footer />
         </Providers>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

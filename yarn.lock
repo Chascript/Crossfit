@@ -7015,6 +7015,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vercel/analytics@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "@vercel/analytics@npm:1.2.2"
+  dependencies:
+    server-only: "npm:^0.0.1"
+  peerDependencies:
+    next: ">= 13"
+    react: ^18 || ^19
+  peerDependenciesMeta:
+    next:
+      optional: true
+    react:
+      optional: true
+  checksum: 10c0/82c89846356b370574414aa511d5a341535dcc7ba3b0a5eabfc7644df6d52a7b30253247627382faf4a0cc4192715cea718fe91027f7ba35efba80256064a005
+  languageName: node
+  linkType: hard
+
 "@vercel/postgres@npm:^0.7.2":
   version: 0.7.2
   resolution: "@vercel/postgres@npm:0.7.2"
@@ -7024,6 +7041,33 @@ __metadata:
     utf-8-validate: "npm:6.0.3"
     ws: "npm:8.14.2"
   checksum: 10c0/0f366789633e02b4acc32a6c5e1f0428e2dc4ada5ce11745949294a4a36aab3545f1d086fff33e80cf341992fdc5af8abc0c78c132d57bb950d47cd2521328d0
+  languageName: node
+  linkType: hard
+
+"@vercel/speed-insights@npm:^1.0.10":
+  version: 1.0.10
+  resolution: "@vercel/speed-insights@npm:1.0.10"
+  peerDependencies:
+    "@sveltejs/kit": ^1 || ^2
+    next: ">= 13"
+    react: ^18 || ^19
+    svelte: ^4
+    vue: ^3
+    vue-router: ^4
+  peerDependenciesMeta:
+    "@sveltejs/kit":
+      optional: true
+    next:
+      optional: true
+    react:
+      optional: true
+    svelte:
+      optional: true
+    vue:
+      optional: true
+    vue-router:
+      optional: true
+  checksum: 10c0/b1c2f91b153d0203e3571e75a775fe457c1d61eb1954601ae63fff0903694b48a0684ea1761c3618ccda4bef3bf1ec1a7ffdf34c18ffd35079f202cf6372e139
   languageName: node
   linkType: hard
 
@@ -8962,8 +9006,9 @@ __metadata:
     "@types/react-dom": "npm:^18"
     "@typescript-eslint/eslint-plugin": "npm:^6.20.0"
     "@typescript-eslint/parser": "npm:^6.20.0"
+    "@vercel/analytics": "npm:^1.2.2"
     "@vercel/postgres": "npm:^0.7.2"
-    ai: "npm:^3.0.12"
+    "@vercel/speed-insights": "npm:^1.0.10"
     autoprefixer: "npm:^10.0.1"
     dotenv: "npm:^16.4.5"
     eslint: "npm:^8.56.0"
@@ -15445,6 +15490,13 @@ __metadata:
     parseurl: "npm:~1.3.3"
     send: "npm:0.18.0"
   checksum: 10c0/fa9f0e21a540a28f301258dfe1e57bb4f81cd460d28f0e973860477dd4acef946a1f41748b5bd41c73b621bea2029569c935faa38578fd34cd42a9b4947088ba
+  languageName: node
+  linkType: hard
+
+"server-only@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "server-only@npm:0.0.1"
+  checksum: 10c0/4704f0ef85da0be981af6d4ed8e739d39bcfd265b9c246a684060acda5642d0fdc6daffc2308e71e2682c5f508090978802eae0a77623c9b90a49f9ae68048d6
   languageName: node
   linkType: hard
 
