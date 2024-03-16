@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { Fredoka } from 'next/font/google';
 import './globals.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 import Providers from './providers';
 import Footer from '../components/footer';
 import { HeaderView } from '../containers/headerView';
@@ -31,6 +32,7 @@ export default function RootLayout({
           <Footer />
         </Providers>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
