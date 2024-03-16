@@ -1,0 +1,58 @@
+{
+  "standard": [
+    {
+      "name": "Deadlifts",
+      "reps": 10,
+      "weight": "225 lbs"
+    },
+    {
+      "name": "Burpees",
+      "reps": 20,
+      "weight": "bodyweight"
+    },
+    {
+      "name": "Kettlebell Swings",
+      "reps": 15,
+      "weight": "35 lbs"
+    },
+    {
+      "name": "Wall Balls",
+      "reps": 20,
+      "weight": "20 lbs"
+    },
+    {
+      "name": "Pull-ups",
+      "reps": 10,
+      "weight": "bodyweight"
+    }
+  ],
+  "scaled": [
+    {
+      "name": "Deadlifts",
+      "reps": 8,
+      "weight": "155 lbs"
+    },
+    {
+      "name": "Burpees",
+      "reps": 15,
+      "weight": "bodyweight"
+    },
+    {
+      "name": "KB Swings",
+      "reps": 12,
+      "weight": "25 lbs"
+    },
+    {
+      "name": "Wall Balls",
+      "reps": 15,
+      "weight": "14 lbs"
+    },
+    {
+      "name": "Ring Rows",
+      "reps": 10,
+      "weight": "bodyweight"
+    }
+  ],
+  "rounds": 4,
+  "type": "AMRAP"
+}

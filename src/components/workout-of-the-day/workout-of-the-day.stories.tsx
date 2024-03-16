@@ -4,23 +4,14 @@ import { WorkoutOfTheDayCard } from '.';
 const meta: Meta<typeof WorkoutOfTheDayCard> = {
   component: WorkoutOfTheDayCard,
   title: 'Components/WorkoutOfTheDayCard',
-  args: {
-    isScaled: true,
-    setIsScaled: () => {},
-  },
+  args: {},
 };
 
 export default meta;
 
 type Story = StoryObj<typeof WorkoutOfTheDayCard>;
 
-export const ScaledWorkout: Story = {
+export const Default: Story = {
   args: {
-  },
-};
-
-export const Rx: Story = {
-  args: {
-    isScaled: false,
   },
 };
