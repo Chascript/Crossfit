@@ -54,5 +54,6 @@
     }
   ],
   "rounds": 4,
-  "type": "AMRAP"
+  "type": "For Time",
+  "time": "20 minutes"
 }

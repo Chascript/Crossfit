@@ -15,6 +15,7 @@ export interface Props {
 export const WorkoutOfTheDayCard = ({
   workout,
 }: Props) => {
+  const { rounds, type, time } = workout;
   const [isScaled, setIsScaled] = useState(false);
 
   return (
@@ -23,8 +24,7 @@ export const WorkoutOfTheDayCard = ({
         <CardHeader className="bg-gray-700 text-white py-4 px-6 rounded-t-lg font-medium justify-between">
           <h3>
             Workout Of The Day
-            {isScaled ? ' (Scaled' : ' (Rx'}
-            {' AI Generated)'}
+            {isScaled ? ' (Scaled)' : ' (Rx)'}
           </h3>
           <div className="w-2">
             <OpenAIIcon />
@@ -46,15 +46,13 @@ export const WorkoutOfTheDayCard = ({
             ))}
           </ul>
           <p className="text-gray-300">
-            {workout.rounds}
-            {' '}
-            rounds of
-            {' '}
+            {(rounds && type !== 'AMRAP') && `${rounds} rounds`}
           </p>
-          <p className="text-gray-300">{workout.type}</p>
+          <p className="text-gray-300">{time}</p>
+          <p className="text-gray-300">{type}</p>
         </CardBody>
         <Divider className="border-gray-700" />
-        <CardFooter className="flex justify-center bg-gray-700 py-4 rounded-b-lg">
+        <CardFooter className="flex flex-col space-y-5 items-center justify-center bg-gray-700 py-4 rounded-b-lg">
           <ButtonGroup className="flex flex-wrap">
             <Button onClick={() => setIsScaled(false)} disabled={!isScaled} className="bg-gray-800 text-white hover:bg-gray-600 disabled:bg-gray-600 disabled:text-gray-400 disabled:hover:bg-gray-600 disabled:hover:text-gray-400">
               Rx
@@ -63,6 +61,9 @@ export const WorkoutOfTheDayCard = ({
               Scaled
             </Button>
           </ButtonGroup>
+          <p className="text-gray-300 self-end text-right text-xs">
+            WOTD is powered by OpenAI, it will update each day at 00:00 UTC.
+          </p>
         </CardFooter>
       </Card>
     )

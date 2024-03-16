@@ -1,5 +1,5 @@
 import WorkoutOfTheDayCard from '../../components/workout-of-the-day';
-import wwotd from '../../../wotd_response.json';
+import wotd from '../../../wotd_response.json';
 
 export const WorkoutOfTheDayView = () => (
   <div className="my-12 mx-10  transition-transform duration-2000">
@@ -25,7 +25,9 @@ export const WorkoutOfTheDayView = () => (
           </li>
         </ul>
       </div>
-      <WorkoutOfTheDayCard workout={wwotd} />
+      <WorkoutOfTheDayCard
+        workout={wotd}
+      />
     </div>
   </div>
 );
