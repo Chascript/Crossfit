@@ -90,8 +90,6 @@ const ExerciseListView = ({
     const flatDifficulties = parsedDifficulties.flat();
 
     setSelectedDifficulty(flatDifficulties);
-    console.log(difficulty);
-    console.log(parsedDifficulties);
   };
 
   const handleTagClick = (tag: string) => {

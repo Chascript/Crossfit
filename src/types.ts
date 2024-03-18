@@ -65,3 +65,17 @@ export type ExerciseNav = {
   title: string;
   link: string;
 };
+
+export type WorkoutOfTheDayExercise = {
+  name: string;
+  reps: number;
+  weight: string;
+};
+
+export type WorkoutOfTheDay = {
+  standard: WorkoutOfTheDayExercise[];
+  scaled: WorkoutOfTheDayExercise[];
+  rounds: number;
+  type: string;
+  time: string;
+};
